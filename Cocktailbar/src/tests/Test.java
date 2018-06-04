@@ -10,7 +10,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Saft Orangensaft = new Saft("O-Saft",45 );
+		Saft Orangensaft = new Saft("O-Saft", 46);
 		Saft Apfelsaft = new Saft("Apfelsaft", 46);
 		Vector v = new Vector();
 		Getraenk[] g = new Getraenk [2]; // array variabel machen
