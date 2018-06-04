@@ -16,7 +16,7 @@ public class Test {
 		Saft Birnensaft = new Saft("Birnensaft", 47 );
 		Vector v = new Vector();
 		Getraenk[] g = new Getraenk [2]; // array variabel machen
-		g[0] = Apfelsaft;
+		g[0] = Karottensaft;
 		g[1] = Orangensaft;
 		Cocktail c1 = new Cocktail("Super-Saft", g);
 		System.out.println(c1.getKalorien());
