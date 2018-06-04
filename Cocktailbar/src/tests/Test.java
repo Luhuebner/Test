@@ -13,6 +13,7 @@ public class Test {
 		Saft Orangensaft = new Saft("O-Saft", 46);
 		Saft Apfelsaft = new Saft("Apfelsaft", 46);
 		Saft Karottensaft = new Saft("Karottensaft", 39);
+		Saft Birnensaft = new Saft("Birnensaft", 47 );
 		Vector v = new Vector();
 		Getraenk[] g = new Getraenk [2]; // array variabel machen
 		g[0] = Apfelsaft;
