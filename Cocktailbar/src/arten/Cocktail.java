@@ -6,6 +6,8 @@ public class Cocktail {
 	private String name;
 	private Vector v;
 	private double kalorien = 0.00;
+	private double preis;
+	private String beschreibung;
 	
 	public Cocktail(String name, Getraenk [] g1) {
 		v = new Vector();
