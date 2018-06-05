@@ -22,6 +22,8 @@ public class Test {
 		System.out.println(c1.getKalorien());
 		System.out.println("hey");
 		System.out.println("Test");
+		System.out.println("test2");
+		System.out.println("test3");
 	}
 
 }
