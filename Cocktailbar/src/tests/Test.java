@@ -21,6 +21,7 @@ public class Test {
 		Cocktail c1 = new Cocktail("Super-Saft", g);
 		System.out.println(c1.getKalorien());
 		System.out.println("hey");
+		System.out.println("Test");
 	}
 
 }
