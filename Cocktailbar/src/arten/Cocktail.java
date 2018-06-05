@@ -2,19 +2,20 @@ package arten;
 
 import java.util.Vector;
 
-public class Cocktail {
-	private String name;
+public class Cocktail extends Getraenk{
 	private Vector v;
-	private double kalorien = 0.00;
+	private double kalorien;
 	
-	public Cocktail(String name, Getraenk [] g1) {
+	public Cocktail(String name, Einzelgetraenk [] g1) {
+		super(name);
+		
 		v = new Vector();
-		this.setName(name);
 		for(int i = 0;i<g1.length;i++) {
 			v.addElement(g1[i]);
-			this.kalorien = this.kalorien + g1[i].getKalorien();
+			kalorien = kalorien + g1[i].getKalorien();
 		}
-		this.kalorien = this.kalorien / g1.length;
+		kalorien = kalorien / g1.length;
+			
 		
 	}
 
@@ -25,13 +26,6 @@ public class Cocktail {
 	public void setKalorien(double kalorien) {
 		this.kalorien = kalorien;
 	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+	
 	
 }

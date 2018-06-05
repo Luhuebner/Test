@@ -3,6 +3,7 @@ package tests;
 import java.util.Vector;
 
 import arten.Cocktail;
+import arten.Einzelgetraenk;
 import arten.Getraenk;
 import arten.Saft;
 
@@ -15,9 +16,10 @@ public class Test {
 		Saft Karottensaft = new Saft("Karottensaft", 39);
 		Saft Birnensaft = new Saft("Birnensaft", 47 );
 		Vector v = new Vector();
-		Getraenk[] g = new Getraenk [2]; // array variabel machen
+		Einzelgetraenk[] g = new Einzelgetraenk [3]; // array variabel machen
 		g[0] = Karottensaft;
 		g[1] = Orangensaft;
+		g[2] = Birnensaft;
 		Cocktail c1 = new Cocktail("Super-Saft", g);
 		System.out.println(c1.getKalorien());
 		System.out.println("hey");

@@ -2,12 +2,11 @@ package arten;
 
 public abstract class Getraenk {
 	private String name;
-	private double kalorien; // in kcal / 100gramm
+	
 
 	
-	public Getraenk(String name, double kcal) {
+	public Getraenk(String name) {
 		this.name = name;
-		this.kalorien = kcal;
 	}
 	
 	public String getName() {
@@ -16,14 +15,5 @@ public abstract class Getraenk {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-
-	public double getKalorien() {
-		return kalorien;
-	}
-
-	public void setKalorien(double kcal) {
-		kalorien = kcal;
 	}
 }
