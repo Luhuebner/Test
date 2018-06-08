@@ -31,8 +31,22 @@ public class Test {
 		
 		
 		Einzelgetraenk[] h = new Einzelgetraenk[100];
-//		h[0] = karottensaft;
+		h[0] = karottensaft;
 
+		try {
+			FileOutputStream fs = new FileOutputStream("Test.cocktail");
+			ObjectOutputStream out = new ObjectOutputStream(fs);
+			for(int i = 0; i<h.length;i++) {
+				out.writeObject(h[i]);
+			}
+			
+			out.close();
+		} catch (Exception e) {
+			System.err.println(e.toString());
+		}
+		
+		h[0] = null;
+		
 		try {
 			FileInputStream fs = new FileInputStream("Test.cocktail");
 			ObjectInputStream in = new ObjectInputStream(fs);
@@ -45,18 +59,9 @@ public class Test {
 			System.err.println(e.toString());
 		}
 		
-		System.out.println(h[0].getName());
-		try {
-			FileOutputStream fs = new FileOutputStream("Test.cocktail");
-			ObjectOutputStream out = new ObjectOutputStream(fs);
-			for(int i = 0; i<h.length;i++) {
-				out.writeObject(h[i]);
-			}
-			
-			out.close();
-		} catch (Exception e) {
-			System.err.println(e.toString());
-		}
+		assert h[0] != null : "h[0] konnte nicht gelesen werden."; // wenn behindert dann test mit if
+		
+		System.out.println("h[0]: " + h[0].getName());
 		
 		System.out.println("end");
 	}
