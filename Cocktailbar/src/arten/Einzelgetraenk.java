@@ -1,6 +1,6 @@
 package arten;
 
-public class Einzelgetraenk extends Getraenk{
+public class Einzelgetraenk extends Getraenk {
 	private double kalorien; // in kcal / 100gramm
 
 	public Einzelgetraenk(String name, double kcal) {

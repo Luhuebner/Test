@@ -1,6 +1,8 @@
 package arten;
 
-public class Saft extends Alkoholfrei{
+import java.io.Serializable;
+
+public class Saft extends Alkoholfrei implements Serializable{
 
 	public Saft(String name, double kcal) {
 		super(name, kcal);

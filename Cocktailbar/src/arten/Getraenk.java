@@ -1,6 +1,8 @@
 package arten;
 
-public abstract class Getraenk {
+import java.io.Serializable;
+
+public abstract class Getraenk implements Serializable {
 	private String name;
 	
 
