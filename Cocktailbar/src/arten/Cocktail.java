@@ -3,41 +3,36 @@ package arten;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Vector;
+import java.util.stream.Collectors;
 
 public class Cocktail extends Getraenk {
-	private Vector v; // zutaten
-	private Vector vv; // mengen
-	private double kalorien;
-	private double alkgehalt;
+	private ArrayList<Einzelgetraenk> zutaten; // zutaten
+	private ArrayList<Double> mengen; // mengen
 
-	public Cocktail(String name, ArrayList zutaten, ArrayList mengen) {
-		super(name);
-		this.kalorien = 0;
-		v = new Vector();
-		vv = new Vector();
-		
-		v.addElement(zutaten);
-		vv.addElement(mengen);
-		
-		Iterator it = zutaten.iterator();
-		Iterator itt = mengen.iterator();
-		
-		while(it.hasNext()) {
-			this.kalorien = kalorien + ((Einzelgetraenk) it.next()).getKalorien()*((double)itt.next()/100); // noch das für alkohol einfügen
+	public Cocktail(String name, ArrayList<Einzelgetraenk> zutaten, ArrayList<Double> mengen) {
+		super(name, 0, 0);
+		this.zutaten = new ArrayList<>(zutaten);
+		this.mengen = new ArrayList<>(mengen);
+
+		for (int i = 0; i < zutaten.size(); ++i) {
+			kalorien += zutaten.get(i).getKalorien() * mengen.get(i);
+			alkgehalt += zutaten.get(i).getAlkgehalt() * mengen.get(i); // formel nciht ganz richtig
 		}
-		
+		kalorien /= 100;
+		alkgehalt /= mengen.stream().collect(Collectors.summingDouble(x -> x));
+
 	}
-	
-//	public Cocktail(String name, Einzelgetraenk[] g1) {
-//		super(name);
-//
-//		v = new Vector();
-//		for (int i = 0; i < g1.length; i++) {
-//			v.addElement(g1[i]);
-//			kalorien = kalorien + g1[i].getKalorien();
-//		}
-//		kalorien = kalorien / g1.length;
-//	}
+
+	// public Cocktail(String name, Einzelgetraenk[] g1) {
+	// super(name);
+	//
+	// v = new Vector();
+	// for (int i = 0; i < g1.length; i++) {
+	// v.addElement(g1[i]);
+	// kalorien = kalorien + g1[i].getKalorien();
+	// }
+	// kalorien = kalorien / g1.length;
+	// }
 
 	public void kaufen() {
 

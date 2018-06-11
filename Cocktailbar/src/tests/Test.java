@@ -26,8 +26,8 @@ public class Test {
 		Einzelgetraenk[] g = new Einzelgetraenk[3]; // array variabel machen
 		
 		ArrayList[][] gg = new ArrayList[2][1];
-		ArrayList list1 = new ArrayList();
-		ArrayList list2 = new ArrayList();
+		ArrayList<Einzelgetraenk> list1 = new ArrayList<>();
+		ArrayList<Double> list2 = new ArrayList<>();
 		
 		list1.add( new Saft("O-Saft", 46.0));
 		list1.add( new Saft("Apfelsaft", 46.0));
@@ -45,7 +45,7 @@ public class Test {
 //		System.out.println(c1.getKalorien());
 		Cocktail c2 = new Cocktail("Deluxe-Saft", list1, list2);
 		System.out.println(c2.getKalorien());
-		
+	
 		
 		Einzelgetraenk[] h = new Einzelgetraenk[100];
 		h[0] = karottensaft;
