@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import arten.Cocktail;
@@ -23,11 +24,27 @@ public class Test {
 		Saft birnensaft = new Saft("Birnensaft", 47);
 		Vector v = new Vector();
 		Einzelgetraenk[] g = new Einzelgetraenk[3]; // array variabel machen
-		g[0] = karottensaft;
-		g[1] = orangensaft;
-		g[2] = birnensaft;
-		Cocktail c1 = new Cocktail("Super-Saft", g);
-		System.out.println(c1.getKalorien());
+		
+		ArrayList[][] gg = new ArrayList[2][1];
+		ArrayList list1 = new ArrayList();
+		ArrayList list2 = new ArrayList();
+		
+		list1.add( new Saft("O-Saft", 46.0));
+		list1.add( new Saft("Apfelsaft", 46.0));
+		list1.add( new Saft("Karottensaft", 39.0));
+		list2.add(150.0);
+		list2.add(250.0);
+		list2.add(300.0);
+		gg[0][0] = list1;
+		gg[1][0] = list2;
+		
+//		g[0] = karottensaft;
+//		g[1] = orangensaft;
+//		g[2] = birnensaft;
+//		Cocktail c1 = new Cocktail("Super-Saft", g);
+//		System.out.println(c1.getKalorien());
+		Cocktail c2 = new Cocktail("Deluxe-Saft", list1, list2);
+		System.out.println(c2.getKalorien());
 		
 		
 		Einzelgetraenk[] h = new Einzelgetraenk[100];
@@ -59,7 +76,7 @@ public class Test {
 			System.err.println(e.toString());
 		}
 		
-		assert h[0] != null : "h[0] konnte nicht gelesen werden."; // wenn behindert dann test mit if
+		assert h[0] != null : "h[0] konnte nicht gelesen werden."; // wenn Behindert dann test mit if
 		
 		System.out.println("h[0]: " + h[0].getName());
 		
