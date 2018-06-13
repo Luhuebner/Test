@@ -6,6 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Vector;
 
 import arten.Cocktail;
@@ -81,6 +82,13 @@ public class Test {
 		System.out.println("h[0]: " + h[0].getName());
 		
 		System.out.println("end");
+		System.out.println(karottensaft.getLagergehalt());
+		Hashtable t = new Hashtable();
+		t.put("Karottensaft", karottensaft);
+		
+		Einzelgetraenk s = (Einzelgetraenk) t.get("Karottensaft");
+		System.out.println(s.getLagergehalt());
+		System.out.println(c2.generiereAnleitung());
 	}
 
 }
