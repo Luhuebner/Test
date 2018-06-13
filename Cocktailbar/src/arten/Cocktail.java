@@ -16,7 +16,7 @@ public class Cocktail extends Getraenk {
 
 		for (int i = 0; i < zutaten.size(); ++i) {
 			kalorien += zutaten.get(i).getKalorien() * mengen.get(i);
-			alkgehalt += zutaten.get(i).getAlkgehalt() * mengen.get(i); // formel nciht ganz richtig
+			alkgehalt += zutaten.get(i).getAlkgehalt() * mengen.get(i);
 		}
 		kalorien /= 100;
 		alkgehalt /= mengen.stream().collect(Collectors.summingDouble(x -> x));
