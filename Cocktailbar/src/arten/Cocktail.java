@@ -8,18 +8,21 @@ import java.util.stream.Collectors;
 public class Cocktail extends Getraenk{
 	private ArrayList<Einzelgetraenk> zutaten; // zutaten
 	private ArrayList<Double> mengen; // mengen
+	
 
 	public Cocktail(String name, ArrayList<Einzelgetraenk> zutaten, ArrayList<Double> mengen) {
-		super(name, 0, 0);
+		super(name, 0, 0,0);
 		this.zutaten = new ArrayList<>(zutaten);
 		this.mengen = new ArrayList<>(mengen);
 
 		for (int i = 0; i < zutaten.size(); ++i) {
 			kalorien += zutaten.get(i).getKalorien() * mengen.get(i);
 			alkgehalt += zutaten.get(i).getAlkgehalt() * mengen.get(i);
+			preis += zutaten.get(i).getPreis()*mengen.get(i)/100;
 		}
 		kalorien /= 100;
 		alkgehalt /= mengen.stream().collect(Collectors.summingDouble(x -> x));
+		preis =Math.round(preis * (1+zutaten.size()/10))-0.01 ;
 
 	}
 

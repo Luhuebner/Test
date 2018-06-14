@@ -20,8 +20,8 @@ public class AlkoholTest {
 		ArrayList<Einzelgetraenk> list1 = new ArrayList<>();
 		ArrayList<Double> list2 = new ArrayList<>();
 
-		list1.add(new Alkoholisch("Whisky", 46.0, 40));
-		list1.add(new Alkoholisch("Wein", 46.0, 20));
+		list1.add(new Alkoholisch("Whisky", 46.0, 40,2.0));
+		list1.add(new Alkoholisch("Wein", 46.0, 20,2.0));
 		list2.add(100.0);
 		list2.add(300.0);
 

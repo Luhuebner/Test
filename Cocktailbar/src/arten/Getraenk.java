@@ -6,11 +6,13 @@ public abstract class Getraenk implements Serializable {
 	protected String name;
 	protected double kalorien; // in kcal / 100gramm
 	protected double alkgehalt;
+	protected double preis;
 		
-	public Getraenk(String name, double kcal, double alkgehalt) {
+	public Getraenk(String name, double kcal, double alkgehalt, double preis) {
 		this.name = name;
 		this.kalorien = kcal;
 		this.alkgehalt = alkgehalt;
+		this.preis = preis;
 	}
 	
 	public String getName() {
@@ -35,5 +37,12 @@ public abstract class Getraenk implements Serializable {
 
 	public void setAlkgehalt(double alkgehalt) {
 		this.alkgehalt = alkgehalt;
+	}
+	public double getPreis() {
+		return preis;
+	}
+
+	public void setPreis(double preis) {
+		this.preis = preis;
 	}
 }
