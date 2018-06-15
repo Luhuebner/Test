@@ -9,7 +9,8 @@ public class AlkAufComparator implements Comparator<Getraenk>{
 
 	@Override
 	public int compare(Getraenk o1, Getraenk o2) {
-		// TODO Auto-generated method stub
+		if(o1.getAlkgehalt()< o2.getAlkgehalt()) return -1;
+		if(o1.getAlkgehalt()> o2.getAlkgehalt()) return 1;
 		return 0;
 	}
 

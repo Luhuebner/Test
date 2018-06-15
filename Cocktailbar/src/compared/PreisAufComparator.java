@@ -8,8 +8,9 @@ import arten.Getraenk;
 public class PreisAufComparator implements Comparator<Getraenk>{
 
 	@Override
-	public int compare(Getraenk arg0, Getraenk arg1) {
-		// TODO Auto-generated method stub
+	public int compare(Getraenk o1, Getraenk o2) {
+		if(o1.getPreis()< o2.getPreis()) return -1;
+		if(o1.getPreis()> o2.getPreis()) return 1;
 		return 0;
 	}
 

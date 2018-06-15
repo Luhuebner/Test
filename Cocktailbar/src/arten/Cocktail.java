@@ -17,12 +17,11 @@ public class Cocktail extends Getraenk {
 		for (int i = 0; i < zutaten.size(); ++i) {
 			kalorien += zutaten.get(i).getKalorien() * mengen.get(i);
 			alkgehalt += zutaten.get(i).getAlkgehalt() * mengen.get(i);
-			preis += zutaten.get(i).getPreis() * mengen.get(i) / 100;
+			preis += zutaten.get(i).getPreis() * (mengen.get(i) / 100);
 		}
 		kalorien /= 100;
 		alkgehalt /= mengen.stream().collect(Collectors.summingDouble(x -> x));
-		preis = Math.round(preis * (1 + zutaten.size() / 10)) - 0.01;
-
+		preis = Math.round(preis*(1+zutaten.size()/10.0)) - 0.01; // idk fucking know
 	}
 
 	// public Cocktail(String name, Einzelgetraenk[] g1) {
