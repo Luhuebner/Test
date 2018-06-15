@@ -20,14 +20,14 @@ public class AlkoholTest {
 		ArrayList<Einzelgetraenk> list1 = new ArrayList<>();
 		ArrayList<Double> list2 = new ArrayList<>();
 
-		list1.add(new Alkoholisch("Whisky", 46.0, 40,2.0));
-		list1.add(new Alkoholisch("Wein", 46.0, 20,2.0));
+		list1.add(new Alkoholisch("Whisky", 250.0, 43,2.0));
+		list1.add(new Alkoholisch("Wein", 83.0, 11,2.0));
 		list2.add(100.0);
 		list2.add(300.0);
 
 		Cocktail c = new Cocktail("WhiskyWein", list1, list2);
 		
-		double expected = 25;
+		double expected = 35;
 		
 		if(c.getAlkgehalt() != expected)
 		{
