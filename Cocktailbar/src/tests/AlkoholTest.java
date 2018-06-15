@@ -22,8 +22,8 @@ public class AlkoholTest {
 
 		list1.add(new Alkoholisch("Whisky", 250.0, 43,2.0));
 		list1.add(new Alkoholisch("Wein", 83.0, 11,2.0));
-		list2.add(100.0);
 		list2.add(300.0);
+		list2.add(100.0);
 
 		Cocktail c = new Cocktail("WhiskyWein", list1, list2);
 		

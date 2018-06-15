@@ -6,13 +6,17 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Hashtable;
 import java.util.Vector;
 
+import arten.Alkoholisch;
 import arten.Cocktail;
 import arten.Einzelgetraenk;
 import arten.Getraenk;
 import arten.Saft;
+import compared.AlkAbComparator;
+import compared.NameAbComparator;
 
 public class Test {
 
@@ -95,6 +99,26 @@ public class Test {
 		Einzelgetraenk E1 = new Einzelgetraenk("Test", 26.0,20.0, 1.0);
 		System.out.println(E1.getPreis());
 		System.out.println(E1.getAlkgehalt());
+		list1.add(new Alkoholisch("Whisky", 250.0, 43,2.0));
+		list1.add(new Alkoholisch("Wein", 83.0, 11,2.0));
+		System.out.println("------------------");
+		for(int i = 0;i<list1.size();i++) {
+			System.out.println(list1.get(i).getAlkgehalt());
+		}
+		System.out.println("------------------");
+		Collections.sort(list1, new AlkAbComparator());
+		for(int i = 0;i<list1.size();i++) {
+			System.out.println(list1.get(i).getAlkgehalt());
+		}
+//		System.out.println("------------------");
+//		for(int i = 0;i<list1.size();i++) {
+//			System.out.println(list1.get(i).getName());
+//		}
+//		System.out.println("------------------");
+//		Collections.sort(list1, new NameAbComparator());
+//		for(int i = 0;i<list1.size();i++) {
+//			System.out.println(list1.get(i).getName());
+//		}
 	}
 
 }
