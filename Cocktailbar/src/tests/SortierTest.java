@@ -1,10 +1,13 @@
 package tests;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import arten.Alkoholisch;
 import arten.Cocktail;
 import arten.Einzelgetraenk;
+import compared.AlkAbComparator;
+import compared.AlkAufComparator;
 
 public class SortierTest {
 
@@ -14,20 +17,15 @@ public class SortierTest {
 
 		list1.add(new Alkoholisch("Whisky", 250.0, 43,2.0));
 		list1.add(new Alkoholisch("Wein", 83.0, 11,2.0));
-		list2.add(300.0);
-		list2.add(100.0);
-
-		Cocktail c = new Cocktail("WhiskyWein", list1, list2);
+		list1.add(new Alkoholisch("Sodawasser", 0.0, 0,0.50));
+		list1.add(new Alkoholisch("Rum", 231.0, 40,2.0));
+		list1.add(new Alkoholisch("Cola", 38.0, 0,2.0));
 		
-		double expected = 35;
+		Collections.sort(list1, new AlkAufComparator());
 		
-		if(c.getAlkgehalt() != expected)
-		{
-			System.out.println("Expected " + expected + ", but got " + c.getAlkgehalt());
-			throw new Exception("Sortierung falsch!");
+		for(int i =0;i<list1.size();i++) {
+			System.out.println(list1.get(i).getName());
 		}
-		System.out.println("Alk: " + c.getAlkgehalt());
-		System.out.println("Test successful!");
 
 	}
 
