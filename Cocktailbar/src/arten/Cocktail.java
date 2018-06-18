@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 public class Cocktail extends Getraenk {
 	private ArrayList<Einzelgetraenk> zutaten; // zutaten
 	private ArrayList<Double> mengen; // mengen
+	//private String Anleitung;
 
 	public Cocktail(String name, ArrayList<Einzelgetraenk> zutaten, ArrayList<Double> mengen) {
 		super(name, 0, 0, 0);
