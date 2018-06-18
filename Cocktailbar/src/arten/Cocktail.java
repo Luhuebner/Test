@@ -24,21 +24,10 @@ public class Cocktail extends Getraenk {
 		preis = Math.round(preis*(1+zutaten.size()/10.0)) - 0.01; // idk fucking know
 	}
 
-	// public Cocktail(String name, Einzelgetraenk[] g1) {
-	// super(name);
-	//
-	// v = new Vector();
-	// for (int i = 0; i < g1.length; i++) {
-	// v.addElement(g1[i]);
-	// kalorien = kalorien + g1[i].getKalorien();
-	// }
-	// kalorien = kalorien / g1.length;
-	// }
-
 	public void kaufen() throws Exception {
 		for (int i = 0; i < this.zutaten.size(); i++) {
 			if (zutaten.get(i).getLagergehalt() - mengen.get(i) < 0) {
-				throw new Exception("Lagerbestand für die Zutat " + zutaten.get(i).getName() + " zu niedrig.");
+				throw new Exception("Lagerbestand fÃ¼r die Zutat " + zutaten.get(i).getName() + " zu niedrig.");
 			}
 			zutaten.get(i).setLagergehalt(zutaten.get(i).getLagergehalt() - mengen.get(i));
 		}
@@ -48,11 +37,11 @@ public class Cocktail extends Getraenk {
 	public String generiereAnleitung() {
 		String anleitung;
 		StringBuilder sb = new StringBuilder();
-		sb.append("Um den Cocktail " + this.getName() + " zuzubereiten benötigt man:\n");
+		sb.append("Um den Cocktail " + this.getName() + " zuzubereiten benÃ¶tigt man:\n");
 		for (int i = 0; i < this.zutaten.size(); i++) {
 			sb.append(this.mengen.get(i) + " gramm " + this.zutaten.get(i).getName() + "\n");
 		}
-		sb.append("Diese schüttet man einfach Alle zusammen und schon ist der " + this.getName() + " fertig.");
+		sb.append("Diese schÃ¼ttet man einfach Alle zusammen und schon ist der " + this.getName() + " fertig.");
 		anleitung = sb.toString();
 		return anleitung;
 	}
