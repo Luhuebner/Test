@@ -12,14 +12,14 @@ public class PreisTest {
 		ArrayList<Einzelgetraenk> list1 = new ArrayList<>();
 		ArrayList<Double> list2 = new ArrayList<>();
 
-		list1.add(new Alkoholisch("Whisky", 250.0, 43,1.0));
-		list1.add(new Alkoholisch("Wein", 83.0, 11,2.0));
+		list1.add(new Alkoholisch("Whisky", 250.0, 43,3.0));
+		list1.add(new Alkoholisch("Wein", 83.0, 11,1.0));
 		list2.add(300.0);
 		list2.add(100.0);
 
 		Cocktail c = new Cocktail("WhiskyWein", list1, list2);
 		
-		double expected = 5.99;
+		double expected = 11.99;
 		
 		if(c.getPreis() != expected)
 		{

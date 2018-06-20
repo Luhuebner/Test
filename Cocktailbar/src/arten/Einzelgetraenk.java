@@ -1,7 +1,7 @@
 package arten;
 
 public class Einzelgetraenk extends Getraenk {
-	private double lagergehalt;
+	protected double lagergehalt;
 	
 	
 	public Einzelgetraenk(String name, double kcal, double alkgehalt, double preis) {
