@@ -22,7 +22,7 @@ public class Cocktail extends Getraenk {
 		}
 		kalorien /= 100;
 		alkgehalt /= mengen.stream().collect(Collectors.summingDouble(x -> x));
-		preis = Math.round(preis*(1+zutaten.size()/10.0)) - 0.01; // idk fucking know
+		preis = Math.round(preis*(1+zutaten.size()/10.0)) - 0.01;
 	}
 
 	public void kaufen() throws Exception {
