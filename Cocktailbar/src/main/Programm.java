@@ -13,69 +13,125 @@ import arten.Einzelgetraenk;
 import arten.Saft;
 
 public class Programm {
-
 	public static void main(String[] args) {
-		Hashtable<String, Einzelgetraenk> hzutaten = new Hashtable();
-		Hashtable<String, Cocktail> hcocktail = new Hashtable();
-		load(hzutaten, hcocktail);
-		
+//		Hashtable<String, Einzelgetraenk> hzutaten = null;
+//		Hashtable<String, Cocktail> hcocktail = null;
+//		load(hzutaten, hcocktail);
 
-		
-		
-//		hzutaten.put("Whiskey", new Alkoholisch("Whisky", 250.0, 43,2.0));
-//		hzutaten.put("Orangensaft", new Saft("Orangensaft", 46.0,1.0));
-//		hzutaten.put("Apfelsaft", new Saft("Apfelsaft", 46.0,1.0));
-//		hzutaten.put("Karottensaft", new Saft("Karottensaft", 39.0,1.0));
-//		hzutaten.put("Wein", new Alkoholisch("Wein", 83.0, 11,2.0));
-//		hzutaten.put("Birnensaft", new Saft("Birnensaft", 47, 2.0));
-//		
-//		ArrayList<Einzelgetraenk> list1 = new ArrayList<>();
-//		ArrayList<Double> list2 = new ArrayList<>();
-//
-//		list1.add(new Alkoholisch("Whisky", 250.0, 43,2.0));
-//		list1.add(new Alkoholisch("Wein", 83.0, 11,2.0));
-//		list2.add(300.0);
-//		list2.add(100.0);
-//		hcocktail.put("WhiskyWein", new Cocktail("WhiskyWein", list1, list2));
-//		list1.clear();
-//		list2.clear();
-		
-		System.out.println(hcocktail.get("WhiskyWein").getAlkgehalt());
-		
-		safe(hzutaten, hcocktail);
-	}
+		// System.out.println(hzutaten.get("Birnensaft").getKalorien());
+		// System.out.println(hcocktail.get("WhiskyWein").getAlkgehalt());
 
-	private static void load(Hashtable<String, Einzelgetraenk> h, Hashtable<String, Cocktail> hh) {
-
+//		safe(hzutaten, hcocktail);
+		
+		Hashtable<String, Einzelgetraenk> hzutaten = null;
+		Hashtable<String, Cocktail> hcocktail = null;
+		
 		try {
 			FileInputStream fs = new FileInputStream("Zutaten.cocktail");
 			ObjectInputStream in = new ObjectInputStream(fs);
-			for (int i = 0; i < h.size(); i++) {
-				h = (Hashtable) in.readObject();
+			hzutaten = (Hashtable<String, Einzelgetraenk>) in.readObject();
+			in.close();
+		} catch (Exception e) {
+			System.err.println(e.toString());
+		}
+		if (hzutaten == null) {
+			hzutaten = new Hashtable<String, Einzelgetraenk>();
+		}
+		if (hzutaten.isEmpty()) {
+			initzutaten(hzutaten);
+		}
+	
+		
+		try {
+			FileInputStream fs = new FileInputStream("Cocktail.cocktail");
+			ObjectInputStream in = new ObjectInputStream(fs);
+			hcocktail = (Hashtable<String, Cocktail>) in.readObject();
+			in.close();
+		} catch (Exception e) {
+			System.err.println(e.toString());
+		}
+		if (hcocktail == null) {
+			hcocktail = new Hashtable<String, Cocktail>();
+		}
+		if (hcocktail.isEmpty()) {
+			initcocktail(hzutaten, hcocktail);
+		}
+		
+		
+	
+		
+		System.out.println(hcocktail.get("WhiskyWein").getKalorien());
+		System.out.println(hzutaten.get("Wein").getKalorien());
+		
+		
+		
+		try {
+
+			FileOutputStream fs = new FileOutputStream("Cocktail.cocktail");
+			ObjectOutputStream out = new ObjectOutputStream(fs);
+			for (int i = 0; i < hcocktail.size(); i++) {
+				out.writeObject(hcocktail);
 			}
+			out.close();
+		} catch (Exception e) {
+			System.err.println(e.toString());
+		}
+		
+		try {
+
+			FileOutputStream fs = new FileOutputStream("Zutaten.cocktail");
+			ObjectOutputStream out = new ObjectOutputStream(fs);
+			for (int i = 0; i < hzutaten.size(); i++) {
+				out.writeObject(hzutaten);
+			}
+			out.close();
+		} catch (Exception e) {
+			System.err.println(e.toString());
+		}
+	}
+
+	private static void load(Hashtable<String, Einzelgetraenk> hzutaten, Hashtable<String, Cocktail> hcocktail) {
+		try {
+			FileInputStream fs = new FileInputStream("Zutaten.cocktail");
+			ObjectInputStream in = new ObjectInputStream(fs);
+			// for (int i = 0; i < h.size(); i++) {
+			hzutaten = (Hashtable<String, Einzelgetraenk>) in.readObject();
+			// }
 
 			in.close();
 		} catch (Exception e) {
 			System.err.println(e.toString());
 		}
 
-		if (h.isEmpty()) {
-			initzutaten(h);
+		if (hzutaten == null) {
+
+			hzutaten = new Hashtable<String, Einzelgetraenk>();
+		}
+
+		if (hzutaten.isEmpty()) {
+			hzutaten = initzutaten();
+			// initzutaten(hzutaten);
 		}
 		try {
 			FileInputStream fs = new FileInputStream("Cocktail.cocktail");
 			ObjectInputStream in = new ObjectInputStream(fs);
-			for (int i = 0; i < hh.size(); i++) {
-				hh = (Hashtable) in.readObject();
-			}
+			// for (int i = 0; i < hh.size(); i++) {
+			hcocktail = (Hashtable<String, Cocktail>) in.readObject();
+			// }
 
 			in.close();
 		} catch (Exception e) {
 			System.err.println(e.toString());
 		}
 
-		if (hh.isEmpty()) {
-			initcocktail(h,hh);
+		if (hcocktail == null) {
+
+			hcocktail = new Hashtable<String, Cocktail>();
+		}
+
+		if (hcocktail.isEmpty()) {
+
+			hcocktail = initcocktail(hzutaten);
 		}
 	}
 
@@ -103,28 +159,32 @@ public class Programm {
 			System.err.println(e.toString());
 		}
 	}
-	private static void initzutaten(Hashtable h) {
-		h.put("Whiskey", new Alkoholisch("Whisky", 250.0, 43,2.0));
-		h.put("Orangensaft", new Saft("Orangensaft", 46.0,1.0));
-		h.put("Apfelsaft", new Saft("Apfelsaft", 46.0,1.0));
-		h.put("Karottensaft", new Saft("Karottensaft", 39.0,1.0));
-		h.put("Wein", new Alkoholisch("Wein", 83.0, 11,2.0));
+
+	private static void initzutaten(Hashtable<String, Einzelgetraenk> h) {
+		
+		
+		h.put("Orangensaft", new Saft("Orangensaft", 46.0, 1.0));
+		h.put("Apfelsaft", new Saft("Apfelsaft", 46.0, 1.0));
+		h.put("Karottensaft", new Saft("Karottensaft", 39.0, 1.0));
+		h.put("Wein", new Alkoholisch("Wein", 83.0, 11, 2.0));
 		h.put("Birnensaft", new Saft("Birnensaft", 47, 2.0));
-		
-		
+		h.put("Whisky", new Alkoholisch("Whisky", 250.0, 43, 2.0));
 	}
-	private static void initcocktail(Hashtable<String, Einzelgetraenk> h, Hashtable<String, Cocktail> hh) {
+
+	private static void initcocktail(Hashtable<String, Einzelgetraenk> hzutaten, Hashtable<String, Cocktail> hcocktail) {
 		ArrayList<Einzelgetraenk> list1 = new ArrayList<>();
 		ArrayList<Double> list2 = new ArrayList<>();
+//		Hashtable<String, Cocktail> hcocktail = new Hashtable<String, Cocktail>();
 
-		list1.add( h.get("Whisky")); 
-		list1.add( h.get("Wein")); 
+		list1.add(hzutaten.get("Whisky"));
+		list1.add(hzutaten.get("Wein"));
+		
 		list2.add(300.0);
 		list2.add(100.0);
-		hh.put("WhiskyWein", new Cocktail("WhiskyWein", list1, list2));
+		hcocktail.put("WhiskyWein", new Cocktail("WhiskyWein", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+		System.out.println("lol");
 		
 	}
 

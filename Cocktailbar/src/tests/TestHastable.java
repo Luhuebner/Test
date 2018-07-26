@@ -51,6 +51,7 @@ public class TestHastable {
 
 	public static void loadme(Hashtable<String, Einzelgetraenk> h) {
 		h.put("Birnensaft", new Saft("Birnensaft", 47, 2.0));
+		System.out.println("lol");
 	}
 
 }
