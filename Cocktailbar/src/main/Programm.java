@@ -96,6 +96,9 @@ public class Programm {
 		h.put("Wein", new Alkoholisch("Wein", 83.0, 11, 2.0));
 		h.put("Birnensaft", new Saft("Birnensaft", 47, 2.0));
 		h.put("Whisky", new Alkoholisch("Whisky", 250.0, 43, 2.0));
+		//Wodka, pfirsich likör/ cranberrysaft, Ananassaft, Kokosmilch, weißer rum, cream of coconut, sahne, blue curacao, eis, jägermeister, redbull
+		// zitronensaft, tequila, grenadinesirup, cola, brauner rum, triple sec, zuckersirup, mandelsirup, zitrone, cointreau, gin
+		//rum mit mehr alk, apricot brandy, grenadine sirup, limettensaft, mangosaft, maracujasaft
 	}
 	private static void initcocktail(Hashtable<String, Einzelgetraenk> hzutaten,
 			Hashtable<String, Cocktail> hcocktail) {
@@ -112,6 +115,10 @@ public class Programm {
 		list1.clear();
 		list2.clear();
 		System.out.println("lol");
+		
+		//https://www.cocktail-rezepte-4u.de/rezepte/top-30-cocktails.html
+		//Sex on the beach, Pina colada, swimming pool, flying hirsch, tequila sunrise, cuba libre, mai tai, long island icetea
+		//zombie, 5 fruechte cocktail, screwdriver
 
 	}
 }
