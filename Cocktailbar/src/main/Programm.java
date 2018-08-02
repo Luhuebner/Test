@@ -114,12 +114,12 @@ public class Programm {
 		h.put("Triple sec", new Alkoholisch("Triple sec", 300.0, 34, 2.0));
 		h.put("Tequila", new Alkoholisch("Tequila", 245.0, 35, 2.0));
 		h.put("Blue Curacao", new Alkoholisch("Blue Curacao", 179.0, 20, 2.0));
+		h.put("Apricot Brandy", new Alkoholisch("Apricot Brandy", 305.0, 27, 2.0));
 		
 		
 		
 		//Kokosmilch, cream of coconut, sahne, eis, redbull
 		//grenadinesirup, cola, zuckersirup, mandelsirup, zitrone
-		//apricot brandy 
 	}
 	private static void initcocktail(Hashtable<String, Einzelgetraenk> hzutaten,
 			Hashtable<String, Cocktail> hcocktail) {
