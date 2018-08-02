@@ -90,15 +90,36 @@ public class Programm {
 	}
 	private static void initzutaten(Hashtable<String, Einzelgetraenk> h) {
 
-		h.put("Orangensaft", new Saft("Orangensaft", 46.0, 1.0));
+		h.put("Ananassaft", new Saft("Ananassaft", 60.0, 1.0));
 		h.put("Apfelsaft", new Saft("Apfelsaft", 46.0, 1.0));
+		h.put("Birnensaft", new Saft("Birnensaft", 47, 1.0));
+		h.put("Cranberrysaft", new Saft("Cranberrysaft", 46, 1.0));
+		h.put("Mangosaft", new Saft("Mangosaft", 51.0, 1.0));
+		h.put("Maracujasaft", new Saft("Maracujasaft", 50.0, 1.0));
 		h.put("Karottensaft", new Saft("Karottensaft", 39.0, 1.0));
+		h.put("Limettensaft", new Saft("Limettensaft", 29.0, 1.0));
+		h.put("Orangensaft", new Saft("Orangensaft", 46.0, 1.0));
+		h.put("Zitronensaft", new Saft("Zitronensaft", 29.0, 1.0));
+		
 		h.put("Wein", new Alkoholisch("Wein", 83.0, 11, 2.0));
-		h.put("Birnensaft", new Saft("Birnensaft", 47, 2.0));
 		h.put("Whisky", new Alkoholisch("Whisky", 250.0, 43, 2.0));
-		//Wodka, pfirsich likör/ cranberrysaft, Ananassaft, Kokosmilch, weißer rum, cream of coconut, sahne, blue curacao, eis, jägermeister, redbull
-		// zitronensaft, tequila, grenadinesirup, cola, brauner rum, triple sec, zuckersirup, mandelsirup, zitrone, cointreau, gin
-		//rum mit mehr alk, apricot brandy, grenadine sirup, limettensaft, mangosaft, maracujasaft
+		h.put("Wodka", new Alkoholisch("Wodka", 231.0, 40, 2.0));
+		h.put("Weißer Rum", new Alkoholisch("Weißer Rum", 230.0, 40, 2.0));
+		h.put("Brauner Rum", new Alkoholisch("Brauner Rum", 234.0, 40, 2.0));
+		h.put("Hochprozentiger Rum", new Alkoholisch("Hochprozentiger Rum", 197.0, 70, 2.5));
+		h.put("Jaegermeister", new Alkoholisch("Jaegermeister", 250.0, 30, 2.0));
+		h.put("Pfirsichlikör", new Alkoholisch("Pfirsichlikör", 194.0, 20, 2.0));
+		h.put("Cointreau", new Alkoholisch("Cointreau", 320.0, 34, 2.0));
+		h.put("Gin", new Alkoholisch("Gin", 263.0, 45, 2.0));
+		h.put("Triple sec", new Alkoholisch("Triple sec", 300.0, 34, 2.0));
+		h.put("Tequila", new Alkoholisch("Tequila", 245.0, 35, 2.0));
+		h.put("Blue Curacao", new Alkoholisch("Blue Curacao", 179.0, 20, 2.0));
+		
+		
+		
+		//Kokosmilch, cream of coconut, sahne, eis, redbull
+		//grenadinesirup, cola, zuckersirup, mandelsirup, zitrone
+		//apricot brandy 
 	}
 	private static void initcocktail(Hashtable<String, Einzelgetraenk> hzutaten,
 			Hashtable<String, Cocktail> hcocktail) {
