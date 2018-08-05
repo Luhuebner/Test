@@ -7,10 +7,12 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import arten.Alkoholfrei;
 import arten.Alkoholisch;
 import arten.Cocktail;
 import arten.Einzelgetraenk;
 import arten.Saft;
+import arten.Softdrinks;
 
 public class Programm {
 	public static void main(String[] args) {
@@ -116,12 +118,11 @@ public class Programm {
 		h.put("Blue Curacao", new Alkoholisch("Blue Curacao", 179.0, 20, 2.0));
 		h.put("Apricot Brandy", new Alkoholisch("Apricot Brandy", 305.0, 27, 2.0));
 		
-		h.put("Cola", new Softdrink("Cola", 38.0, 0.8));
+		h.put("Cola", new Softdrinks("Cola", 38.0, 0.8));
 		
 		h.put("Kokosmilch", new Alkoholfrei("Kokosmilch", 230.0, 1.5));
 		h.put("cream of coconut", new Alkoholfrei("cream of coconut", 330.0, 1.5));
 		h.put("Red Bull", new Alkoholfrei("Red Bull", 45.0, 1.5));
-		
 		h.put("Zuckersirup", new Alkoholfrei("Zuckersirup", 201.0, 1.0));
 		h.put("Grenadinesirup", new Alkoholfrei("Grenadinesirup", 268.0, 1.0));
 		h.put("Mandelsirup", new Alkoholfrei("Mandelsirup", 234.0, 1.0));
