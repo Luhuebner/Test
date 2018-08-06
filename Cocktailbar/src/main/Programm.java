@@ -22,8 +22,18 @@ public class Programm {
 		hzutaten = loadzutaten();
 		hcocktail = loadcocktail(hzutaten);
 
-		System.out.println(hcocktail.get("WhiskyWein").getKalorien());
 		System.out.println(hzutaten.get("Wein").getKalorien());
+		System.out.println(hcocktail.get("WhiskyWein").getKalorien());
+		System.out.println(hcocktail.get("Pina Colada").getKalorien());
+		System.out.println(hcocktail.get("Swimming Pool").getKalorien());
+		System.out.println(hcocktail.get("Flying Hirsch").getKalorien());
+		System.out.println(hcocktail.get("Tequila Sunrise").getKalorien());
+		System.out.println(hcocktail.get("Cuba Libre").getKalorien());
+		System.out.println(hcocktail.get("Mai Tai").getKalorien());
+		System.out.println(hcocktail.get("Long Island Icetea").getKalorien());
+		System.out.println(hcocktail.get("Zombie").getKalorien());
+		System.out.println(hcocktail.get("5 Fruechte Cocktail").getKalorien());
+		System.out.println(hcocktail.get("Screwdriver").getKalorien());
 
 		safe(hzutaten, hcocktail);
 	}
@@ -106,14 +116,14 @@ public class Programm {
 		h.put("Wein", new Alkoholisch("Wein", 83.0, 11, 2.0));
 		h.put("Whisky", new Alkoholisch("Whisky", 250.0, 43, 2.0));
 		h.put("Wodka", new Alkoholisch("Wodka", 231.0, 40, 2.0));
-		h.put("WeiÃŸer Rum", new Alkoholisch("WeiÃŸer Rum", 230.0, 40, 2.0));
+		h.put("Weisser Rum", new Alkoholisch("Weisser Rum", 230.0, 40, 2.0));
 		h.put("Brauner Rum", new Alkoholisch("Brauner Rum", 234.0, 40, 2.0));
 		h.put("Hochprozentiger Rum", new Alkoholisch("Hochprozentiger Rum", 197.0, 70, 2.5));
 		h.put("Jaegermeister", new Alkoholisch("Jaegermeister", 250.0, 30, 2.0));
-		h.put("PfirsichlikÃ¶r", new Alkoholisch("PfirsichlikÃ¶r", 194.0, 20, 2.0));
+		h.put("Pfirsichlikör", new Alkoholisch("Pfirsichlikör", 194.0, 20, 2.0));
 		h.put("Cointreau", new Alkoholisch("Cointreau", 320.0, 34, 2.0));
 		h.put("Gin", new Alkoholisch("Gin", 263.0, 45, 2.0));
-		h.put("Triple sec", new Alkoholisch("Triple sec", 300.0, 34, 2.0));
+		h.put("Triple Sec", new Alkoholisch("Triple Sec", 300.0, 34, 2.0));
 		h.put("Tequila", new Alkoholisch("Tequila", 245.0, 35, 2.0));
 		h.put("Blue Curacao", new Alkoholisch("Blue Curacao", 179.0, 20, 2.0));
 		h.put("Apricot Brandy", new Alkoholisch("Apricot Brandy", 305.0, 27, 2.0));
@@ -121,7 +131,7 @@ public class Programm {
 		h.put("Cola", new Softdrinks("Cola", 38.0, 0.8));
 		
 		h.put("Kokosmilch", new Alkoholfrei("Kokosmilch", 230.0, 1.5));
-		h.put("cream of coconut", new Alkoholfrei("cream of coconut", 330.0, 1.5));
+		h.put("Cream of Coconut", new Alkoholfrei("Cream of Coconut", 330.0, 1.5));
 		h.put("Red Bull", new Alkoholfrei("Red Bull", 45.0, 1.5));
 		h.put("Zuckersirup", new Alkoholfrei("Zuckersirup", 201.0, 1.0));
 		h.put("Grenadinesirup", new Alkoholfrei("Grenadinesirup", 268.0, 1.0));
@@ -138,16 +148,162 @@ public class Programm {
 
 		list1.add(hzutaten.get("Whisky"));
 		list1.add(hzutaten.get("Wein"));
-
 		list2.add(300.0);
 		list2.add(100.0);
 		hcocktail.put("WhiskyWein", new Cocktail("WhiskyWein", list1, list2));
 		list1.clear();
 		list2.clear();
-		System.out.println("lol");
+		
+		list1.add(hzutaten.get("Wodka"));
+		list1.add(hzutaten.get("Pfirsichlikör"));
+		list1.add(hzutaten.get("Cranberrysaft"));
+		list1.add(hzutaten.get("Orangensaft"));
+		list2.add(40.0);
+		list2.add(40.0);
+		list2.add(80.0);
+		list2.add(80.0);
+		hcocktail.put("Sex on the Beach", new Cocktail("Sex on the Beach", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Cream of Coconut"));
+		list1.add(hzutaten.get("Weisser Rum"));
+		list1.add(hzutaten.get("Kokosmilch"));
+		list1.add(hzutaten.get("Ananassaft"));
+		list2.add(40.0);
+		list2.add(40.0);
+		list2.add(20.0);
+		list2.add(90.0);
+		hcocktail.put("Pina Colada", new Cocktail("Pina Colada", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Wodka"));
+		list1.add(hzutaten.get("Weisser Rum"));
+		list1.add(hzutaten.get("Blue Curacao"));
+		list1.add(hzutaten.get("Ananassaft"));
+		list1.add(hzutaten.get("Cream of Coconut"));
+		list2.add(20.0);
+		list2.add(40.0);
+		list2.add(10.0);
+		list2.add(40.0);
+		list2.add(20.0);
+		hcocktail.put("Swimming Pool", new Cocktail("Swimming Pool", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Jaegermeister"));
+		list1.add(hzutaten.get("Red Bull"));
+		list2.add(20.0);
+		list2.add(50.0);
+		hcocktail.put("Flying Hirsch", new Cocktail("Flying Hirsch", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Tequila"));
+		list1.add(hzutaten.get("Zitronensaft"));
+		list1.add(hzutaten.get("Orangensaft"));
+		list1.add(hzutaten.get("Grenadinesirup"));
+		list2.add(60.0);
+		list2.add(10.0);
+		list2.add(120.0);
+		list2.add(20.0);
+		hcocktail.put("Tequila Sunrise", new Cocktail("Tequila Sunrise", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Brauner Rum"));
+		list1.add(hzutaten.get("Zitronensaft"));
+		list1.add(hzutaten.get("Cola"));
+		list2.add(40.0);
+		list2.add(10.0);
+		list2.add(120.0);
+		hcocktail.put("Cuba Libre", new Cocktail("Cuba Libre", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Brauner Rum"));
+		list1.add(hzutaten.get("Weisser Rum"));
+		list1.add(hzutaten.get("Triple Sec"));
+		list1.add(hzutaten.get("Zuckersirup"));
+		list1.add(hzutaten.get("Mandelsirup"));
+		list1.add(hzutaten.get("Zitronensaft"));
+		list2.add(40.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(10.0);
+		list2.add(10.0);
+		list2.add(10.0);
+		hcocktail.put("Mai Tai", new Cocktail("Mai Tai", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Wodka"));
+		list1.add(hzutaten.get("Brauner Rum"));
+		list1.add(hzutaten.get("Tequila"));
+		list1.add(hzutaten.get("Cointreau"));
+		list1.add(hzutaten.get("Gin"));
+		list1.add(hzutaten.get("Zitronensaft"));
+		list1.add(hzutaten.get("Orangensaft"));
+		list1.add(hzutaten.get("Cola"));
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		hcocktail.put("Long Island Icetea", new Cocktail("Long Island Icetea", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Brauner Rum"));
+		list1.add(hzutaten.get("Weisser Rum"));
+		list1.add(hzutaten.get("Hochprozentiger Rum"));
+		list1.add(hzutaten.get("Apricot Brandy"));
+		list1.add(hzutaten.get("Grenadinesirup"));
+		list1.add(hzutaten.get("Ananassaft"));
+		list1.add(hzutaten.get("Orangensaft"));
+		list1.add(hzutaten.get("Limettensaft"));
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(10.0);
+		list2.add(20.0);
+		list2.add(40.0);
+		list2.add(20.0);
+		list2.add(30.0);
+		hcocktail.put("Zombie", new Cocktail("Zombie", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Orangensaft"));
+		list1.add(hzutaten.get("Ananassaft"));
+		list1.add(hzutaten.get("Maracujasaft"));
+		list1.add(hzutaten.get("Mangosaft"));
+		list1.add(hzutaten.get("Zitronensaft"));
+		list1.add(hzutaten.get("Grenadinesirup"));
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		list2.add(20.0);
+		hcocktail.put("5 Fruechte Cocktail", new Cocktail("5 Fruechte Cocktail", list1, list2));
+		list1.clear();
+		list2.clear();
+		
+		list1.add(hzutaten.get("Wodka"));
+		list1.add(hzutaten.get("Orangensaft"));
+		list2.add(40.0);
+		list2.add(80.0);
+		hcocktail.put("Screwdriver", new Cocktail("Screwdriver", list1, list2));
+		list1.clear();
+		list2.clear();
+		
 		
 		//https://www.cocktail-rezepte-4u.de/rezepte/top-30-cocktails.html
-		//Sex on the beach, Pina colada, swimming pool, flying hirsch, tequila sunrise, cuba libre, mai tai, long island icetea
 		//zombie, 5 fruechte cocktail, screwdriver
 
 	}
