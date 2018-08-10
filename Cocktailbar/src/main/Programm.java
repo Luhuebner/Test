@@ -16,6 +16,7 @@ import arten.Softdrinks;
 
 public class Programm {
 	public static void main(String[] args) {
+		// initialisieren der Hashtables
 		Hashtable<String, Einzelgetraenk> hzutaten = null;
 		Hashtable<String, Cocktail> hcocktail = null;
 
@@ -40,6 +41,8 @@ public class Programm {
 
 	
 	private static Hashtable<String, Einzelgetraenk> loadzutaten() {
+		// befüllen der Hashtable mit den vorhandenen Zutaten aus einer datei
+		// falls keine datei vorhanden wird eine Standartliste geladen
 		Hashtable<String, Einzelgetraenk> hzutaten = null;
 		try {
 			FileInputStream fs = new FileInputStream("Zutaten.cocktail");
@@ -58,6 +61,8 @@ public class Programm {
 		return hzutaten;
 	}
 	private static Hashtable<String, Cocktail> loadcocktail(Hashtable<String, Einzelgetraenk> hzutaten) {
+		// befüllen der Hashtable mit den vorhandenen Cocktails aus einer datei
+		// falls keine Datei vorhanden wird eine Standartliste geladen
 		Hashtable<String, Cocktail> hcocktail = null;
 		try {
 			FileInputStream fs = new FileInputStream("Cocktail.cocktail");
@@ -76,6 +81,7 @@ public class Programm {
 		return hcocktail;
 	}
 	private static void safe(Hashtable<String, Einzelgetraenk> hzutaten, Hashtable<String, Cocktail> hcocktail) {
+		// speichern der hashtables für zutaten und cocktails in dateien
 		try {
 
 			FileOutputStream fs = new FileOutputStream("Cocktail.cocktail");
@@ -101,6 +107,7 @@ public class Programm {
 		}
 	}
 	private static void initzutaten(Hashtable<String, Einzelgetraenk> h) {
+		// initiale befüllung der zutaten in die Hashtable falls keine datei vorhanden war
 
 		h.put("Mangosaft", new Saft("Mangosaft", 51.0, 1.0));
 		h.put("Apfelsaft", new Saft("Apfelsaft", 46.0, 1.0));
@@ -138,8 +145,8 @@ public class Programm {
 		h.put("Cream of Coconut", new Alkoholfrei("Cream of Coconut", 330.0, 1.5));
 
 	}
-	private static void initcocktail(Hashtable<String, Einzelgetraenk> hzutaten,
-			Hashtable<String, Cocktail> hcocktail) {
+	private static void initcocktail(Hashtable<String, Einzelgetraenk> hzutaten,Hashtable<String, Cocktail> hcocktail) {
+		// initiale befülle der Hashtable für cocktails falls keine Datei vorhanden ist
 		ArrayList<Einzelgetraenk> list1 = new ArrayList<>();
 		ArrayList<Double> list2 = new ArrayList<>();
 		// Hashtable<String, Cocktail> hcocktail = new Hashtable<String, Cocktail>();
