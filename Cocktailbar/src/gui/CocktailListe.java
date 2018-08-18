@@ -14,7 +14,7 @@ public class CocktailListe {
     private Label lblCocktailSuchen;
 
     @FXML
-    private AutoCompleteTextField<?> tfSuch;
+    private AutoCompleteTextField tfSuch;
 
     @FXML
     private Label lblZutaten;

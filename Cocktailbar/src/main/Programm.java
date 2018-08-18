@@ -22,18 +22,18 @@ public class Programm {
 		hzutaten = loadzutaten();
 		hcocktail = loadcocktail(hzutaten);
 
-		System.out.println(hzutaten.get("Wein").getKalorien());
-		System.out.println(hcocktail.get("WhiskyWein").getKalorien());
-		System.out.println(hcocktail.get("Pina Colada").getKalorien());
-		System.out.println(hcocktail.get("Swimming Pool").getKalorien());
-		System.out.println(hcocktail.get("Flying Hirsch").getKalorien());
-		System.out.println(hcocktail.get("Tequila Sunrise").getKalorien());
-		System.out.println(hcocktail.get("Cuba Libre").getKalorien());
-		System.out.println(hcocktail.get("Mai Tai").getKalorien());
-		System.out.println(hcocktail.get("Long Island Icetea").getKalorien());
-		System.out.println(hcocktail.get("Zombie").getKalorien());
-		System.out.println(hcocktail.get("5 Fruechte Cocktail").getKalorien());
-		System.out.println(hcocktail.get("Screwdriver").getKalorien());
+		System.out.println(hzutaten.get("Wein").getPreis());
+		System.out.println(hcocktail.get("WhiskyWein").getPreis());
+		System.out.println(hcocktail.get("Pina Colada").getPreis());
+		System.out.println(hcocktail.get("Swimming Pool").getPreis());
+		System.out.println(hcocktail.get("Flying Hirsch").getPreis());
+		System.out.println(hcocktail.get("Tequila Sunrise").getPreis());
+		System.out.println(hcocktail.get("Cuba Libre").getPreis());
+		System.out.println(hcocktail.get("Mai Tai").getPreis());
+		System.out.println(hcocktail.get("Long Island Icetea").getPreis());
+		System.out.println(hcocktail.get("Zombie").getPreis());
+		System.out.println(hcocktail.get("5 Fruechte Cocktail").getPreis());
+		System.out.println(hcocktail.get("Screwdriver").getPreis());
 
 		safe(hzutaten, hcocktail);
 	}
@@ -148,8 +148,8 @@ public class Programm {
 
 		list1.add(hzutaten.get("Whisky"));
 		list1.add(hzutaten.get("Wein"));
-		list2.add(300.0);
-		list2.add(100.0);
+		list2.add(60.0);
+		list2.add(60.0);
 		hcocktail.put("WhiskyWein", new Cocktail("WhiskyWein", list1, list2));
 		list1.clear();
 		list2.clear();
