@@ -8,6 +8,7 @@ public abstract class Getraenk implements Serializable {
 	protected double alkgehalt;
 	protected double preis;
 		
+	// Konstruktor Getraenk
 	public Getraenk(String name, double kcal, double alkgehalt, double preis) {
 		this.name = name;
 		this.kalorien = kcal;
