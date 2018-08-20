@@ -17,7 +17,7 @@ public class Einzelgetraenk extends Getraenk {
 	public double getLagergehalt() {
 		return lagergehalt;
 	}
-	/ setter Lagergehalt
+	// setter Lagergehalt
 	public void setLagergehalt(double lagergehalt) {
 		this.lagergehalt = lagergehalt;
 	}

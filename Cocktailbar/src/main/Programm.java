@@ -23,17 +23,7 @@ public class Programm {
 		hzutaten = loadzutaten();
 		hcocktail = loadcocktail(hzutaten);
 
-		System.out.println(hzutaten.get("Wein").getPreis());
-		System.out.println(hcocktail.get("WhiskyWein").getPreis());
-		System.out.println(hcocktail.get("Pina Colada").getPreis());
-		System.out.println(hcocktail.get("Swimming Pool").getPreis());
-		System.out.println(hcocktail.get("Flying Hirsch").getPreis());
-		System.out.println(hcocktail.get("Tequila Sunrise").getPreis());
-		System.out.println(hcocktail.get("Cuba Libre").getPreis());
-		System.out.println(hcocktail.get("Mai Tai").getPreis());
-		System.out.println(hcocktail.get("Long Island Icetea").getPreis());
-		System.out.println(hcocktail.get("Zombie").getPreis());
-		System.out.println(hcocktail.get("5 Fruechte Cocktail").getPreis());
+		
 		System.out.println(hcocktail.get("Screwdriver").getPreis());
 
 		safe(hzutaten, hcocktail);
