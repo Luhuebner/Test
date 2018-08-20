@@ -6,6 +6,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
 
 import arten.Alkoholfrei;
 import arten.Alkoholisch;
@@ -19,12 +22,40 @@ public class Programm {
 		// initialisieren der Hashtables
 		Hashtable<String, Einzelgetraenk> hzutaten = null;
 		Hashtable<String, Cocktail> hcocktail = null;
-
 		hzutaten = loadzutaten();
 		hcocktail = loadcocktail(hzutaten);
 
+		Scanner s = new Scanner(System.in);
+		int eingabei = 0;
+		String eingabes = "";
+		Set <String> keys = hcocktail.keySet();
+		Iterator<String> itr = keys.iterator();
+		int j = 1;
+		String str;
 		
-		System.out.println(hcocktail.get("Screwdriver").getPreis());
+		while(eingabei != 3) {
+			System.out.println("Was möchten Sie tun? Drücken Sie die entsprechende Taste um vortzufahren.");
+			System.out.println("1: Cocktail erstellen \n2: Cocktail auswählen und bestellen \n3: Bar verlassen");
+			eingabei = s.nextInt();	
+			if(eingabei == 1) {
+				
+			}else if(eingabei == 2) {
+				System.out.println("Drücken Sie die entsprechende Taste um den jeweiligen Cocktail Auszuwählen");
+				while(itr.hasNext()) {
+					str = itr.next();
+					System.out.println(j + ": " + hcocktail.get(str).getName());
+					j++;
+				}
+				
+				
+				
+//				for(Cocktail name: hcocktail) {
+//					hcocktail.
+//					
+//				}
+				
+			}
+		}
 
 		safe(hzutaten, hcocktail);
 	}
