@@ -30,26 +30,29 @@ public class Programm {
 		String eingabes = "";
 		Set<String> keys = hcocktail.keySet();
 		Iterator<String> itr = keys.iterator();
-		int j = 1;
 		String str;
 
 		while (eingabei != 3) {
 			System.out.println("Was möchten Sie tun? Drücken Sie die entsprechende Taste um vorzufahren.");
 			System.out.println("1: Cocktail erstellen \n2: Cocktail auswählen und bestellen \n3: Bar verlassen");
 			eingabei = s.nextInt();
+			s.nextLine();
 			if (eingabei == 1) {
-
+				
+				
 			} else if (eingabei == 2) {
 				// eingabei = 2;
 				while (eingabei == 2) {
+					itr = keys.iterator();
+					int j=1;
 					while (itr.hasNext()) {
 						str = itr.next();
 						System.out.println(j + ": " + hcocktail.get(str).getName());
 						j++;
 					}
 					System.out.println("Schreiben Sie den exakten Namen des Cocktails den Sie auswählen möchten.");
-					eingabes = "Mai Tai"; // hier problem mit dem scanner
-
+					eingabes = s.nextLine();
+					System.out.println(eingabes);
 					System.out.println("Name: " + hcocktail.get(eingabes).getName());
 					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien());
 					System.out.println("Alkoholgehalt: " + hcocktail.get(eingabes).getAlkgehalt());
@@ -59,7 +62,7 @@ public class Programm {
 					System.out.println("Drücken Sie die 1 zum bestellen, die 2 um zur Cocktailüberischt zurück zugelangen oder die 3 um zur Hauptüberischt zu gelangen");
 					eingabei = s.nextInt();
 					if (eingabei == 1) {
-						// hcocktail.get(eingabes).kaufen();
+						//hcocktail.get(eingabes).kaufen();
 						System.out.println("Viel spaß mit ihrem " + hcocktail.get(eingabes).getName() + ".");
 					}
 					if (eingabei == 3) { // variable wird auf 4 gesetzt um mit der ursprÃ¼nglichen while-schleife das
