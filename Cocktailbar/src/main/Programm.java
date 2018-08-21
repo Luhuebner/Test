@@ -28,44 +28,45 @@ public class Programm {
 		Scanner s = new Scanner(System.in);
 		int eingabei = 0;
 		String eingabes = "";
-		Set <String> keys = hcocktail.keySet();
+		Set<String> keys = hcocktail.keySet();
 		Iterator<String> itr = keys.iterator();
 		int j = 1;
 		String str;
-		
-		while(eingabei != 3) {
-			System.out.println("Was möchten Sie tun? Drücken Sie die entsprechende Taste um vortzufahren.");
-			System.out.println("1: Cocktail erstellen \n2: Cocktail auswählen und bestellen \n3: Bar verlassen");
-			eingabei = s.nextInt();	
-			if(eingabei == 1) {
-				
-			}else if(eingabei == 2) {
-				//eingabei = 2;
-				while(eingabei == 2){
-					while(itr.hasNext()) {
+
+		while (eingabei != 3) {
+			System.out.println("Was m�chten Sie tun? Dr�cken Sie die entsprechende Taste um vorzufahren.");
+			System.out.println("1: Cocktail erstellen \n2: Cocktail ausw�hlen und bestellen \n3: Bar verlassen");
+			eingabei = s.nextInt();
+			if (eingabei == 1) {
+
+			} else if (eingabei == 2) {
+				// eingabei = 2;
+				while (eingabei == 2) {
+					while (itr.hasNext()) {
 						str = itr.next();
 						System.out.println(j + ": " + hcocktail.get(str).getName());
 						j++;
 					}
-					System.out.println("Schreiben Sie den exakten Namen des Cocktails den Sie Auswählen möchten.");
-					eingabes = s.next();
-				
+					System.out.println("Schreiben Sie den exakten Namen des Cocktails den Sie ausw�hlen m�chten.");
+					eingabes = "Mai Tai"; // hier problem mit dem scanner
+
 					System.out.println("Name: " + hcocktail.get(eingabes).getName());
 					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien());
-					System.out.println("Alkoholgehalt: " + hcocktail.get(eingabes).getAlkoholgehalt());
+					System.out.println("Alkoholgehalt: " + hcocktail.get(eingabes).getAlkgehalt());
 					System.out.println("Preis: " + hcocktail.get(eingabes).getPreis());
-				
-					System.out.println("Möchten Sie einen " + eingabes + " für " + hcocktail.get(eingabes).getPreis + " bestellen?");
-					System.out.println("Drücken sie die 1 zum bestellen, die 2 um zur Cocktailüberischt zurück zugelangen oder die 3 um zur Hauptüberischt zu gelangen");
-					einagbei = s.nextInt();
-					if(eingabei ==1){
-						hcocktail.get(eingabes).kaufen;
-						System.out.println("Viel spaß mit ihrem " + hcocktail.get(eingabes).getName + ".");	
+
+					System.out.println("M�chten Sie einen " + eingabes + " f�r " + hcocktail.get(eingabes).getPreis()+ " bestellen?");
+					System.out.println("Dr�cken Sie die 1 zum bestellen, die 2 um zur Cocktail�berischt zur�ck zugelangen oder die 3 um zur Haupt�berischt zu gelangen");
+					eingabei = s.nextInt();
+					if (eingabei == 1) {
+						// hcocktail.get(eingabes).kaufen();
+						System.out.println("Viel spa� mit ihrem " + hcocktail.get(eingabes).getName() + ".");
 					}
-					if(eingabei ==3){ // variable wird auf 4 gesetzt um mit der ursprünglichen while-schleife das programm nciht zu beenden
-						einagbei = 4;	
+					if (eingabei == 3) { // variable wird auf 4 gesetzt um mit der ursprünglichen while-schleife das
+											// programm nciht zu beenden
+						eingabei = 4;
 					}
-					
+
 				}
 			}
 		}
@@ -73,7 +74,6 @@ public class Programm {
 		safe(hzutaten, hcocktail);
 	}
 
-	
 	private static Hashtable<String, Einzelgetraenk> loadzutaten() {
 		// befÃ¼llen der Hashtable mit den vorhandenen Zutaten aus einer datei
 		// falls keine datei vorhanden wird eine Standartliste geladen
@@ -94,6 +94,7 @@ public class Programm {
 		}
 		return hzutaten;
 	}
+
 	private static Hashtable<String, Cocktail> loadcocktail(Hashtable<String, Einzelgetraenk> hzutaten) {
 		// befÃ¼llen der Hashtable mit den vorhandenen Cocktails aus einer datei
 		// falls keine Datei vorhanden wird eine Standartliste geladen
@@ -114,6 +115,7 @@ public class Programm {
 		}
 		return hcocktail;
 	}
+
 	private static void safe(Hashtable<String, Einzelgetraenk> hzutaten, Hashtable<String, Cocktail> hcocktail) {
 		// speichern der hashtables fÃ¼r zutaten und cocktails in dateien
 		try {
@@ -140,8 +142,10 @@ public class Programm {
 			System.err.println(e.toString());
 		}
 	}
+
 	private static void initzutaten(Hashtable<String, Einzelgetraenk> h) {
-		// initiale befÃ¼llung der zutaten in die Hashtable falls keine datei vorhanden war
+		// initiale befÃ¼llung der zutaten in die Hashtable falls keine datei
+		// vorhanden war
 
 		h.put("Mangosaft", new Saft("Mangosaft", 51.0, 1.0));
 		h.put("Apfelsaft", new Saft("Apfelsaft", 46.0, 1.0));
@@ -153,7 +157,7 @@ public class Programm {
 		h.put("Limettensaft", new Saft("Limettensaft", 29.0, 1.0));
 		h.put("Zitronensaft", new Saft("Zitronensaft", 29.0, 1.0));
 		h.put("Cranberrysaft", new Saft("Cranberrysaft", 46, 1.0));
-		
+
 		h.put("Wein", new Alkoholisch("Wein", 83.0, 11, 2.0));
 		h.put("Whisky", new Alkoholisch("Whisky", 250.0, 43, 2.0));
 		h.put("Weisser Rum", new Alkoholisch("Weisser Rum", 230.0, 40, 2.0));
@@ -168,9 +172,9 @@ public class Programm {
 		h.put("Triple Sec", new Alkoholisch("Triple Sec", 300.0, 34, 2.0));
 		h.put("Blue Curacao", new Alkoholisch("Blue Curacao", 179.0, 20, 2.0));
 		h.put("Apricot Brandy", new Alkoholisch("Apricot Brandy", 305.0, 27, 2.0));
-		
+
 		h.put("Cola", new Softdrinks("Cola", 38.0, 0.8));
-		
+
 		h.put("Red Bull", new Alkoholfrei("Red Bull", 45.0, 1.5));
 		h.put("Kokosmilch", new Alkoholfrei("Kokosmilch", 230.0, 1.5));
 		h.put("Mandelsirup", new Alkoholfrei("Mandelsirup", 234.0, 1.0));
@@ -179,8 +183,11 @@ public class Programm {
 		h.put("Cream of Coconut", new Alkoholfrei("Cream of Coconut", 330.0, 1.5));
 
 	}
-	private static void initcocktail(Hashtable<String, Einzelgetraenk> hzutaten,Hashtable<String, Cocktail> hcocktail) {
-		// initiale befÃ¼lle der Hashtable fÃ¼r cocktails falls keine Datei vorhanden ist
+
+	private static void initcocktail(Hashtable<String, Einzelgetraenk> hzutaten,
+			Hashtable<String, Cocktail> hcocktail) {
+		// initiale befÃ¼lle der Hashtable fÃ¼r cocktails falls keine Datei
+		// vorhanden ist
 		ArrayList<Einzelgetraenk> list1 = new ArrayList<>();
 		ArrayList<Double> list2 = new ArrayList<>();
 		// Hashtable<String, Cocktail> hcocktail = new Hashtable<String, Cocktail>();
@@ -192,7 +199,7 @@ public class Programm {
 		hcocktail.put("WhiskyWein", new Cocktail("WhiskyWein", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Wodka"));
 		list1.add(hzutaten.get("PfirsichlikÃ¶r"));
 		list1.add(hzutaten.get("Cranberrysaft"));
@@ -204,7 +211,7 @@ public class Programm {
 		hcocktail.put("Sex on the Beach", new Cocktail("Sex on the Beach", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Cream of Coconut"));
 		list1.add(hzutaten.get("Weisser Rum"));
 		list1.add(hzutaten.get("Kokosmilch"));
@@ -216,7 +223,7 @@ public class Programm {
 		hcocktail.put("Pina Colada", new Cocktail("Pina Colada", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Wodka"));
 		list1.add(hzutaten.get("Weisser Rum"));
 		list1.add(hzutaten.get("Blue Curacao"));
@@ -230,7 +237,7 @@ public class Programm {
 		hcocktail.put("Swimming Pool", new Cocktail("Swimming Pool", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Jaegermeister"));
 		list1.add(hzutaten.get("Red Bull"));
 		list2.add(20.0);
@@ -238,7 +245,7 @@ public class Programm {
 		hcocktail.put("Flying Hirsch", new Cocktail("Flying Hirsch", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Tequila"));
 		list1.add(hzutaten.get("Zitronensaft"));
 		list1.add(hzutaten.get("Orangensaft"));
@@ -250,7 +257,7 @@ public class Programm {
 		hcocktail.put("Tequila Sunrise", new Cocktail("Tequila Sunrise", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Brauner Rum"));
 		list1.add(hzutaten.get("Zitronensaft"));
 		list1.add(hzutaten.get("Cola"));
@@ -260,7 +267,7 @@ public class Programm {
 		hcocktail.put("Cuba Libre", new Cocktail("Cuba Libre", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Brauner Rum"));
 		list1.add(hzutaten.get("Weisser Rum"));
 		list1.add(hzutaten.get("Triple Sec"));
@@ -276,7 +283,7 @@ public class Programm {
 		hcocktail.put("Mai Tai", new Cocktail("Mai Tai", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Wodka"));
 		list1.add(hzutaten.get("Brauner Rum"));
 		list1.add(hzutaten.get("Tequila"));
@@ -296,7 +303,7 @@ public class Programm {
 		hcocktail.put("Long Island Icetea", new Cocktail("Long Island Icetea", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Brauner Rum"));
 		list1.add(hzutaten.get("Weisser Rum"));
 		list1.add(hzutaten.get("Hochprozentiger Rum"));
@@ -316,7 +323,7 @@ public class Programm {
 		hcocktail.put("Zombie", new Cocktail("Zombie", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Orangensaft"));
 		list1.add(hzutaten.get("Ananassaft"));
 		list1.add(hzutaten.get("Maracujasaft"));
@@ -332,7 +339,7 @@ public class Programm {
 		hcocktail.put("5 Fruechte Cocktail", new Cocktail("5 Fruechte Cocktail", list1, list2));
 		list1.clear();
 		list2.clear();
-		
+
 		list1.add(hzutaten.get("Wodka"));
 		list1.add(hzutaten.get("Orangensaft"));
 		list2.add(40.0);
@@ -341,5 +348,5 @@ public class Programm {
 		list1.clear();
 		list2.clear();
 	}
-		
+
 }
