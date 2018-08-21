@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BestellungFensterController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="590.0" prefWidth="890.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.5546697038724373" layoutX="240.0" layoutY="159.0" prefHeight="580.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5950728660652325" layoutX="59.0" layoutY="147.0" orientation="VERTICAL" prefHeight="578.4" prefWidth="493.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label fx:id="lblCocktailSuchen" layoutX="-17.0" layoutY="6.0" text="Cocktail Suchen" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tfCocktailSuche" layoutX="10.0" layoutY="30.0" onAction="#writeCocktailSuche" prefHeight="26.0" prefWidth="186.0" AnchorPane.leftAnchor="10.0" />
+                                    <Button fx:id="btnSuch" layoutX="213.0" layoutY="30.0" mnemonicParsing="false" onAction="#doSearchCocktail" text="Suchen" />
+                                    <Label fx:id="lblZutaten" layoutX="12.0" layoutY="62.0" text="Zutaten" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="tblAusgewaehlteZutaten" layoutX="14.0" layoutY="89.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0">
+                                       <columns>
+                                          <TableColumn fx:id="tcZutaten" prefWidth="199.19998174905777" text="Ausgewählte Zutaten" />
+                                       </columns>
+                                    </TableView>
+                                    <Label fx:id="lblErsteAuswahl" layoutX="219.0" layoutY="89.0" text="1. Auswahl">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="cbAuswahl1" layoutX="219.0" layoutY="111.0" prefWidth="150.0" />
+                                    <Label fx:id="lblZweiteAuswahl" layoutX="219.0" layoutY="148.0" text="2. Auswahl">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="cbAuswahl2" layoutX="219.0" layoutY="170.0" prefWidth="150.0" />
+                                    <Button fx:id="btnAuswahlHinzufuegen" layoutX="294.0" layoutY="218.0" mnemonicParsing="false" onAction="#doAuswahlHinzufuegen" text="Hinzufügen" />
+                                    <Button fx:id="btnZutatenFiltern" layoutX="23.0" layoutY="301.0" mnemonicParsing="false" onAction="#doZutatenFiltern" text="Filtern" AnchorPane.leftAnchor="10.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <TableView fx:id="tblWarenkorb" layoutX="14.0" layoutY="48.0" prefHeight="180.0" prefWidth="372.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+                                       <columns>
+                                          <TableColumn fx:id="tblWKCocktail" prefWidth="150.39995765686035" text="Cocktail" />
+                                          <TableColumn fx:id="tblWKMenge" prefWidth="148.00003051757812" text="Menge" />
+                                          <TableColumn fx:id="tblWKPreis" minWidth="0.0" prefWidth="69.60003662109375" text="Preis" />
+                                       </columns>
+                                    </TableView>
+                                    <Label fx:id="lblPreis" layoutX="413.0" layoutY="58.0" text="Preis">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblPreisWarenkorb" layoutX="405.0" layoutY="93.0" prefHeight="26.0" prefWidth="48.0" />
+                                    <Label fx:id="lblEuroZeichen" layoutX="449.0" layoutY="98.0" text="€" />
+                                    <Button fx:id="btnWKBestellen" layoutX="397.0" layoutY="146.0" mnemonicParsing="false" onAction="#doWKBestellen" text="Bestellen" />
+                                    <Label layoutX="14.0" layoutY="14.0" text="Warenkorb" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <SplitPane dividerPositions="0.7807078417765441" layoutX="96.0" layoutY="156.0" orientation="VERTICAL" prefHeight="578.4" prefWidth="388.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label fx:id="lblListeCocktails" layoutX="-8.0" layoutY="15.0" text="Liste der gefundenen Cocktails" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="tblListeCocktail" layoutX="7.0" layoutY="38.0" prefHeight="409.0" prefWidth="386.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+                                       <columns>
+                                          <TableColumn fx:id="tblLCName" prefWidth="137.59994506835938" text="Name" />
+                                          <TableColumn fx:id="tblLCAlkoholgehalt" prefWidth="83.20001220703125" text="Alkoholgeh." />
+                                          <TableColumn fx:id="tblLCKcal" prefWidth="70.0" text="Kcal" />
+                                          <TableColumn fx:id="tblLCPreis" prefWidth="79.19999999999999" text="Preis" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label fx:id="lblListeSortieren" layoutX="30.0" layoutY="14.0" text="Liste sortieren nach" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="cbListeSortieren" layoutX="14.0" layoutY="36.0" prefHeight="26.0" prefWidth="270.0" AnchorPane.leftAnchor="10.0" />
+                                    <Button fx:id="btnListeSortieren" layoutX="307.0" layoutY="36.0" mnemonicParsing="false" onAction="#doListeSortieren" text="Sortieren" />
+                                    <Button fx:id="btnBackWindowCocktail" layoutX="307.0" layoutY="84.0" mnemonicParsing="false" onAction="#doGoBackWindowCocktail" text="Zurück" AnchorPane.rightAnchor="10.0" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

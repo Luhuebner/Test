@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CocktailErstellenFensterController">
+	<children>
+		<Label fx:id="lblCocktailErstellen" layoutX="10.0" layoutY="10.0" text="Eigenen Cocktail erstellen" AnchorPane.leftAnchor="10.0">
+			<font>
+				<Font size="15.0" />
+			</font>
+		</Label>
+		<TextField fx:id="tfNewCocktail" layoutX="10.0" layoutY="32.0" onAction="#writeCocktailName" prefHeight="26.0" prefWidth="238.0" promptText="Wie soll dein Cocktail heißen?" AnchorPane.leftAnchor="10.0" />
+		<Label fx:id="lblUserNewCocktail" layoutX="423.0" layoutY="10.0" text="Wer erstellt den Cocktail?">
+			<font>
+				<Font size="15.0" />
+			</font>
+		</Label>
+		<TextField fx:id="tfUserNewCocktail" layoutX="423.0" layoutY="32.0" onAction="#writeCocktailErsteller" prefHeight="26.0" prefWidth="209.0" promptText="Wie heißt du?" />
+		<VBox layoutX="14.0" layoutY="118.0" spacing="10.0" AnchorPane.leftAnchor="10.0">
+			<children>
+				<Label fx:id="lblAlkohol" text="Alkohol">
+					<font>
+						<Font size="15.0" />
+					</font>
+				</Label>
+				<Label fx:id="lblSoftdrink" text="Softdrink">
+					<font>
+						<Font size="15.0" />
+					</font>
+				</Label>
+				<Label fx:id="lblSaefte" text="Säfte">
+					<font>
+						<Font size="15.0" />
+					</font>
+				</Label>
+				<Label fx:id="lblExtras" text="Extras">
+					<font>
+						<Font size="15.0" />
+					</font>
+				</Label>
+			</children>
+		</VBox>
+		<VBox layoutX="89.0" layoutY="116.0" spacing="8.0">
+			<children>
+				<ChoiceBox fx:id="cbAlkohol" prefWidth="150.0" />
+				<ChoiceBox fx:id="cbSoftdrink" prefWidth="150.0" />
+				<ChoiceBox fx:id="cbSaefte" prefWidth="150.0" />
+				<ChoiceBox fx:id="cbExtras" prefWidth="150.0" />
+			</children>
+		</VBox>
+		<VBox layoutX="245.0" layoutY="116.0" spacing="7.0">
+			<children>
+				<TextField fx:id="tfGrammAlkohol" onAction="#writeGrammAlkohol" prefHeight="26.0" prefWidth="39.0" />
+				<TextField fx:id="tfGrammSoftdrink" onAction="#writeGrammSoftdrink" prefHeight="26.0" prefWidth="39.0" />
+				<TextField fx:id="tfGrammSaefte" onAction="#writeGrammSaefte" prefHeight="26.0" prefWidth="39.0" />
+				<TextField fx:id="tfGrammExtras" onAction="#writeGrammExtras" prefHeight="26.0" prefWidth="39.0" />
+			</children>
+		</VBox>
+		<Label fx:id="lblGrammAlkohol" layoutX="285.0" layoutY="121.0" text="g" />
+		<Label fx:id="lblGrammSoftdrink" layoutX="285.0" layoutY="159.0" text="g" />
+		<Label fx:id="lblGrammSaefte" layoutX="285.0" layoutY="191.0" text="g" />
+		<Label fx:id="lblGrammExtras" layoutX="285.0" layoutY="227.0" text="g" />
+		<VBox layoutX="298.0" layoutY="118.0" spacing="7.0">
+			<children>
+				<Button fx:id="btnAddAlkohol" mnemonicParsing="false" text="+" />
+				<Button fx:id="btnAddSoftdrink" mnemonicParsing="false" text="+" />
+				<Button fx:id="btnAddSaefte" mnemonicParsing="false" text="+" />
+				<Button fx:id="btnAddExtras" mnemonicParsing="false" text="+" />
+			</children>
+		</VBox>
+		<Button fx:id="btnErstellen" layoutX="262.0" layoutY="303.0" mnemonicParsing="false" onAction="#doCocktailErstellen" prefHeight="66.0" prefWidth="113.0" text="Erstellen">
+			<font>
+				<Font size="19.0" />
+			</font>
+		</Button>
+		<TableView fx:id="tblZutaten" layoutX="416.0" layoutY="78.0" prefHeight="200.0" prefWidth="210.0" AnchorPane.rightAnchor="10.0">
+			<columns>
+				<TableColumn fx:id="tblColumnZutat" prefWidth="139.20001220703125" text="Zutat" />
+				<TableColumn fx:id="tblColumnMenge" prefWidth="72.0" text="Menge" />
+			</columns>
+		</TableView>
+		<Label fx:id="lblKcal" layoutX="428.0" layoutY="289.0" text="Kcal" />
+		<Label fx:id="lblPreis" layoutX="426.0" layoutY="313.0" text="Preis (€)" />
+		<Label fx:id="lblAlkoholgeahalt" layoutX="428.0" layoutY="340.0" text="Alkoholgehalt (%)" />
+		<Label fx:id="lblKcalAnzeige" layoutX="595.0" layoutY="288.0" prefHeight="18.0" prefWidth="32.0" />
+		<Label fx:id="lblPreisAnzeige" layoutX="595.0" layoutY="312.0" prefHeight="18.0" prefWidth="32.0" />
+      <Button fx:id="btnBackCocktailErstellen" layoutX="585.0" layoutY="357.0" mnemonicParsing="false" onAction="#doGoBackCocktailErstellen" text="Zurück" AnchorPane.rightAnchor="10.0" />
+		<Label fx:id="lblAlkoholgehaltAnzeige" layoutX="595.0" layoutY="339.0" prefHeight="18.0" prefWidth="32.0" />
+	</children>
+</AnchorPane>
