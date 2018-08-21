@@ -61,6 +61,7 @@ public class Programm {
 					System.out.println("Möchten Sie einen " + eingabes + " für " + hcocktail.get(eingabes).getPreis()+ " bestellen?");
 					System.out.println("Drücken Sie die 1 zum bestellen, die 2 um zur Cocktailüberischt zurück zugelangen oder die 3 um zur Hauptüberischt zu gelangen");
 					eingabei = s.nextInt();
+					s.nextLine();
 					if (eingabei == 1) {
 						//hcocktail.get(eingabes).kaufen();
 						System.out.println("Viel spaß mit ihrem " + hcocktail.get(eingabes).getName() + ".");
