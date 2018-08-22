@@ -43,29 +43,27 @@ public class Programm {
 			eingabei = s.nextInt();
 			s.nextLine();
 			if (eingabei == 1) {
-				Iterator<String> itr = zkeys.iterator();
-				while(its.hasNext()){
-					str = itr.hasNext();
-					System.out.println("Name: " + hzutaten.get(str).getName());	
+				while(eingabei == 1) {
+					itr = zkeys.iterator();
+					while(itr.hasNext()){
+						str = itr.next();
+						System.out.println("Name: " + hzutaten.get(str).getName());	
+					}
+					System.out.println("Schreiben Sie den exakten Namen der Zutat die Sie in Ihrem Cocktail haben möchten.");
+					eingabes = s.nextLine();
+					// zutat in arraylist für cocktail
+					System.out.println("Geben Sie nun die menge dieser Zutat an. (in Milliliter)");
+					eingabes = s.nextLine();
+					//menge in arraylist für cocktail
+					System.out.println("Drücken Sie nun die 1 um eine weitere Zutat hinzuzufügen, die 2 um die Erstellung abzuschliessen oder die 3 um die Erstellung abzubrechen.");
+					eingabei = s.nextInt();
+					s.nextLine();
 					
-					if (itr.hasNext().hasNext().hasNext().hasNext()){
-						str1 =itr.next();	
-						str2 =itr.next();
-						str3 =itr.next();
-						str4 =itr.next();
-						System.out.println(hzutaten.get(str1).getName()\t\t + hzutaten.get(str2).getName()\t\t + hzutaten.get(str3).getName()\t\t + hzutaten.get(str4).getName());
-					} else if(itr.hasNext().hasNext().hasNext()){
-						str1 =itr.next();	
-						str2 =itr.next();
-						str3 =itr.next();
-						System.out.println(hzutaten.get(str1).getName()\t\t + hzutaten.get(str2).getName()\t\t + hzutaten.get(str3).getName());
-					} else if(itr.hasNext().hasNext()){
-						str1 =itr.next();	
-						str2 =itr.next();
-						System.out.println(hzutaten.get(str1).getName()\t\t + hzutaten.get(str2).getName());
-					} else if(itr.hasNext()){
-						str1 =itr.next();
-						System.out.println(hzutaten.get(str1).getName());
+					
+					if(eingabei == 2) {
+						//cocktail erstellen, in hashtable, und speichern
+					}else if (eingabei == 3) {
+						//arraylisten leern
 					}
 				}
 				
