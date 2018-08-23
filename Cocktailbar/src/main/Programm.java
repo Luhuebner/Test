@@ -22,10 +22,13 @@ public class Programm {
 		// initialisieren der Hashtables
 		Hashtable<String, Einzelgetraenk> hzutaten = null;
 		Hashtable<String, Cocktail> hcocktail = null;
+		ArrayList<Einzelgetraenk> list1 = new ArrayList<>();
+		ArrayList<Double> list2 = new ArrayList<>();
 		hzutaten = loadzutaten();
 		hcocktail = loadcocktail(hzutaten);
 
 		Scanner s = new Scanner(System.in);
+		double wert =0.00;
 		int eingabei = 0;
 		String eingabes = "";
 		Set<String> keys = hcocktail.keySet();
@@ -52,18 +55,27 @@ public class Programm {
 					System.out.println("Schreiben Sie den exakten Namen der Zutat die Sie in Ihrem Cocktail haben möchten.");
 					eingabes = s.nextLine();
 					// zutat in arraylist für cocktail
+					list1.add(hzutaten.get(eingabes));
 					System.out.println("Geben Sie nun die menge dieser Zutat an. (in cl)");
 					eingabei = s.nextInt()*10;
 					//menge in arraylist für cocktail
+					list2.add(eingabei * 1.0);
 					System.out.println("Drücken Sie nun die 1 um eine weitere Zutat hinzuzufügen, die 2 um die Erstellung abzuschliessen oder die 3 um die Erstellung abzubrechen.");
 					eingabei = s.nextInt();
 					s.nextLine();
-					
-					
+										
 					if(eingabei == 2) {
+						//name eingeben
+						System.out.println("Geben Sie Ihrem erstelltem Cocktail nun einen Namen.");
+						eingabes = s.nextLine();
 						//cocktail erstellen, in hashtable, und speichern
+						hcocktail.put(eingabes, new Cocktail(eingabes, list1, list2));
+						safe(hzutaten, hcocktail);
+						System.out.println("Ihr Cocktail wurde gespeichert");
 					}else if (eingabei == 3) {
 						//arraylisten leern
+						list1.clear();
+						list2.clear();
 					}
 				}
 				
@@ -80,7 +92,6 @@ public class Programm {
 					}
 					System.out.println("Schreiben Sie den exakten Namen des Cocktails den Sie auswÃ¤hlen mÃ¶chten.");
 					eingabes = s.nextLine();
-					System.out.println(eingabes);
 					System.out.println("Name: " + hcocktail.get(eingabes).getName());
 					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien());
 					System.out.println("Alkoholgehalt: " + hcocktail.get(eingabes).getAlkgehalt());
@@ -92,6 +103,7 @@ public class Programm {
 					s.nextLine();
 					if (eingabei == 1) {
 						//hcocktail.get(eingabes).kaufen();
+						wert = wert + hcocktail.get(eingabes).getPreis();
 						System.out.println("Viel spaÃŸ mit ihrem " + hcocktail.get(eingabes).getName() + ".");
 					}
 					if (eingabei == 3) { // variable wird auf 4 gesetzt um mit der ursprÃƒÂ¼nglichen while-schleife das
@@ -103,6 +115,7 @@ public class Programm {
 			}
 		}
 		//rechnung erstellen und anzeigen, immer wenn bestellt iwrd preis aufsummieren
+		System.out.println("Vielen Dank für Ihren Besuch. Die Summe Ihrer Rechnung beträgt: " + wert + "€");
 		safe(hzutaten, hcocktail);
 	}
 
