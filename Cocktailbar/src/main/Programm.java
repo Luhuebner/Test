@@ -102,7 +102,7 @@ public class Programm {
 				}
 			}
 		}
-
+		//rechnung erstellen und anzeigen, immer wenn bestellt iwrd preis aufsummieren
 		safe(hzutaten, hcocktail);
 	}
 
