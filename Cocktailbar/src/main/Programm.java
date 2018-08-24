@@ -134,7 +134,7 @@ public class Programm {
 					System.out.println("Name: " + hcocktail.get(eingabes).getName());
 					System.out.println("Zutaten: ");
 					for (int i = 0; i < hcocktail.get(eingabes).zutaten.size(); i++) {
-						System.out.println(hcocktail.get(eingabes).menge.get(i)  + "cl \t"+ hcocktail.get(eingabes).zutaten.get(i).getName());
+						System.out.println(hcocktail.get(eingabes).mengen.get(i)  + "cl \t"+ hcocktail.get(eingabes).zutaten.get(i).getName());
 					}
 					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien()+ " kcal");
 					System.out.println("Alkoholgehalt: " + Math.round(hcocktail.get(eingabes).getAlkgehalt()) + "%");
