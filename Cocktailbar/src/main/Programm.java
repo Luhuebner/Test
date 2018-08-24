@@ -115,9 +115,9 @@ public class Programm {
 					System.out.println("Schreiben Sie den exakten Namen des Cocktails den Sie auswaehlen moechten.");
 					eingabes = s.nextLine();
 					System.out.println("Name: " + hcocktail.get(eingabes).getName());
-					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien());
-					System.out.println("Alkoholgehalt: " + Math.round(hcocktail.get(eingabes).getAlkgehalt()));
-					System.out.println("Preis: " + hcocktail.get(eingabes).getPreis());
+					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien())+ " kcal";
+					System.out.println("Alkoholgehalt: " + Math.round(hcocktail.get(eingabes).getAlkgehalt()) + "%");
+					System.out.println("Preis: " + hcocktail.get(eingabes).getPreis() + " Euro");
 
 					System.out.println("Moechten Sie einen " + eingabes + " fuer " + hcocktail.get(eingabes).getPreis()
 							+ " bestellen?");
@@ -128,7 +128,7 @@ public class Programm {
 					if (eingabei == 1) {
 						// hcocktail.get(eingabes).kaufen();
 						wert = wert + hcocktail.get(eingabes).getPreis();
-						System.out.println("Viel spass¸ mit ihrem " + hcocktail.get(eingabes).getName() + ".");
+						System.out.println("Viel spas¸ mit ihrem " + hcocktail.get(eingabes).getName() + ".");
 					}
 					if (eingabei == 3) { // variable wird auf 4 gesetzt um mit der ursprÃƒÆ’Ã‚Â¼nglichen while-schleife
 											// das
@@ -140,7 +140,7 @@ public class Programm {
 			}
 		}
 		// rechnung erstellen und anzeigen, immer wenn bestellt iwrd preis aufsummieren
-		System.out.println("Vielen Dank fuer Ihren Besuch. Die Summe Ihrer Rechnung betraegt: " + wert*10/10.00 + " Euro");
+		System.out.println("Vielen Dank fuer Ihren Besuch. Die Summe Ihrer Rechnung betraegt: " + wert + " Euro"); // wert noch riwie auf 2 kommastellen anzeigen lassen
 		safe(hzutaten, hcocktail);
 	}
 
