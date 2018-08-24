@@ -145,7 +145,7 @@ public class Programm {
 					if (eingabei == 1) {
 						// hcocktail.get(eingabes).kaufen();
 						wert = wert + hcocktail.get(eingabes).getPreis();
-						System.out.println("Viel spas¸ mit ihrem " + hcocktail.get(eingabes).getName() + ".");
+						System.out.println("Viel spass mit ihrem " + hcocktail.get(eingabes).getName() + ".");
 					}
 					if (eingabei == 3) { // variable wird auf 4 gesetzt um mit der ursprÃƒÆ’Ã‚Â¼nglichen while-schleife
 											// das
