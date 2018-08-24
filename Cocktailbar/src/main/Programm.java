@@ -137,7 +137,7 @@ public class Programm {
 					System.out.println("Preis: " + hcocktail.get(eingabes).getPreis() + " Euro");
 
 					System.out.println("Moechten Sie einen " + eingabes + " fuer " + hcocktail.get(eingabes).getPreis()
-							+ " bestellen?");
+							+ " Euro bestellen?");
 					System.out.println(
 							"Druecken Sie die 1 zum bestellen, die 2 um zur Cocktailueberischt zurueck zugelangen oder die 3 um zur Hauptueberischt zu gelangen");
 					eingabei = s.nextInt();
