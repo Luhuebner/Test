@@ -71,7 +71,7 @@ public class Programm {
 							}
 						}
 						if(bpruef == false){
-							System.out.println("Bitte überprüfen ´Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");	
+							System.out.println("Bitte überpruefen Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");	
 						}
 					}
 					
@@ -112,8 +112,25 @@ public class Programm {
 						System.out.println(j + ": " + hcocktail.get(str).getName());
 						j++;
 					}
-					System.out.println("Schreiben Sie den exakten Namen des Cocktails den Sie auswaehlen moechten.");
-					eingabes = s.nextLine();
+					
+					bpruef = false;
+					while(bpruef == false){
+						System.out.println("Schreiben Sie den exakten Namen des Cocktails den Sie auswaehlen moechten.");
+						eingabes = s.nextLine();
+						itr = keys.iterator();
+						
+						while(itr.hasNext()){
+							str = itr.next();
+							if(eingabes.equals(hcocktail.get(str).getName())){
+								bpruef = true;
+							}
+						}
+						if(bpruef == false){
+							System.out.println("Bitte überpruefen Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");	
+						}
+					}
+					
+					
 					System.out.println("Name: " + hcocktail.get(eingabes).getName());
 					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien())+ " kcal";
 					System.out.println("Alkoholgehalt: " + Math.round(hcocktail.get(eingabes).getAlkgehalt()) + "%");
@@ -140,7 +157,7 @@ public class Programm {
 			}
 		}
 		// rechnung erstellen und anzeigen, immer wenn bestellt iwrd preis aufsummieren
-		System.out.println("Vielen Dank fuer Ihren Besuch. Die Summe Ihrer Rechnung betraegt: " + wert + " Euro"); // wert noch riwie auf 2 kommastellen anzeigen lassen
+		System.out.println("Vielen Dank fuer Ihren Besuch. Die Summe Ihrer Rechnung betraegt: " +  Double.valueOf(Math.round((wert.)*100)/100.0) + " Euro"); // wert noch riwie auf 2 kommastellen anzeigen lassen
 		safe(hzutaten, hcocktail);
 	}
 
