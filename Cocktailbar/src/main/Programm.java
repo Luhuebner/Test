@@ -34,11 +34,8 @@ public class Programm {
 		Set<String> keys = hcocktail.keySet();
 		Set<String> zkeys = hzutaten.keySet();
 		Iterator<String> itr = keys.iterator();
+		boolean bpruef = false;
 		String str;
-		String str1;
-		String str2;
-		String str3;
-		String str4;
 
 		while (eingabei != 3) {
 			System.out.println("Was moechten Sie tun? Druecken Sie die entsprechende Taste.");
@@ -61,10 +58,24 @@ public class Programm {
 
 					}
 					System.out.println("");
-					System.out.println(
-							"Schreiben Sie den exakten Namen der Zutat die Sie in Ihrem Cocktail haben moechten.");
-					eingabes = s.nextLine();
-
+					bpruef = false;
+					while(bpruef == false){
+						System.out.println("Schreiben Sie den exakten Namen der Zutat die Sie in Ihrem Cocktail haben moechten.");
+						eingabes = s.nextLine();
+						itr = zkeys.iterator();
+						
+						while(itr.hasNext()){
+							str = itr.next();
+							if(eingabes.equals(hzutaten.get(str).getName())){
+								bpruef = true;
+							}
+						}
+						if(bpruef == false){
+							System.out.println("Bitte überprüfen ´Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");	
+						}
+					}
+					
+					
 					list1.add(hzutaten.get(eingabes));
 					System.out.println("Geben Sie nun die menge dieser Zutat an. (in cl)");
 					eingabei = s.nextInt() * 10;
@@ -105,7 +116,7 @@ public class Programm {
 					eingabes = s.nextLine();
 					System.out.println("Name: " + hcocktail.get(eingabes).getName());
 					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien());
-					System.out.println("Alkoholgehalt: " + hcocktail.get(eingabes).getAlkgehalt());
+					System.out.println("Alkoholgehalt: " + Math.round(hcocktail.get(eingabes).getAlkgehalt()));
 					System.out.println("Preis: " + hcocktail.get(eingabes).getPreis());
 
 					System.out.println("Moechten Sie einen " + eingabes + " fuer " + hcocktail.get(eingabes).getPreis()
@@ -117,9 +128,9 @@ public class Programm {
 					if (eingabei == 1) {
 						// hcocktail.get(eingabes).kaufen();
 						wert = wert + hcocktail.get(eingabes).getPreis();
-						System.out.println("Viel spass� mit ihrem " + hcocktail.get(eingabes).getName() + ".");
+						System.out.println("Viel spass¸ mit ihrem " + hcocktail.get(eingabes).getName() + ".");
 					}
-					if (eingabei == 3) { // variable wird auf 4 gesetzt um mit der ursprÃƒÂ¼nglichen while-schleife
+					if (eingabei == 3) { // variable wird auf 4 gesetzt um mit der ursprÃƒÆ’Ã‚Â¼nglichen while-schleife
 											// das
 											// programm nciht zu beenden
 						eingabei = 4;
@@ -129,12 +140,12 @@ public class Programm {
 			}
 		}
 		// rechnung erstellen und anzeigen, immer wenn bestellt iwrd preis aufsummieren
-		System.out.println("Vielen Dank fuer Ihren Besuch. Die Summe Ihrer Rechnung betraegt: " + wert + " Euro");
+		System.out.println("Vielen Dank fuer Ihren Besuch. Die Summe Ihrer Rechnung betraegt: " + wert*10/10.00 + " Euro");
 		safe(hzutaten, hcocktail);
 	}
 
 	private static Hashtable<String, Einzelgetraenk> loadzutaten() {
-		// befÃƒÆ’Ã‚Â¼llen der Hashtable mit den vorhandenen Zutaten aus einer
+		// befÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼llen der Hashtable mit den vorhandenen Zutaten aus einer
 		// datei
 		// falls keine datei vorhanden wird eine Standartliste geladen
 		Hashtable<String, Einzelgetraenk> hzutaten = null;
@@ -157,7 +168,7 @@ public class Programm {
 	}
 
 	private static Hashtable<String, Cocktail> loadcocktail(Hashtable<String, Einzelgetraenk> hzutaten) {
-		// befÃƒÆ’Ã‚Â¼llen der Hashtable mit den vorhandenen Cocktails aus
+		// befÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼llen der Hashtable mit den vorhandenen Cocktails aus
 		// einer datei
 		// falls keine Datei vorhanden wird eine Standartliste geladen
 		Hashtable<String, Cocktail> hcocktail = null;
@@ -180,7 +191,7 @@ public class Programm {
 	}
 
 	private static void safe(Hashtable<String, Einzelgetraenk> hzutaten, Hashtable<String, Cocktail> hcocktail) {
-		// speichern der hashtables fÃƒÆ’Ã‚Â¼r zutaten und cocktails in
+		// speichern der hashtables fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r zutaten und cocktails in
 		// dateien
 		try {
 
@@ -208,7 +219,7 @@ public class Programm {
 	}
 
 	private static void initzutaten(Hashtable<String, Einzelgetraenk> h) {
-		// initiale befÃƒÆ’Ã‚Â¼llung der zutaten in die Hashtable falls keine
+		// initiale befÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼llung der zutaten in die Hashtable falls keine
 		// datei
 		// vorhanden war
 
