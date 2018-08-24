@@ -49,34 +49,48 @@ public class Programm {
 					while (itr.hasNext()) {
 						str = itr.next();
 						if (k == 3) {
-							System.out.println("Name: " + hzutaten.get(str).getName() + "\t\t\t");
+							if(hzutaten.get(str).getName().length()<10) {
+								System.out.println("Name: " + hzutaten.get(str).getName() + "\t\t\t");
+							}else if(hzutaten.get(str).getName().length()<20) {
+								System.out.println("Name: " + hzutaten.get(str).getName() + "\t\t");
+							}else {
+								System.out.println("Name: " + hzutaten.get(str).getName() + "\t");
+							}
 							k = 0;
 						} else {
-							System.out.print("Name: " + hzutaten.get(str).getName() + "\t\t\t");
+							if(hzutaten.get(str).getName().length()<10) {
+								System.out.print("Name: " + hzutaten.get(str).getName() + "\t\t\t");
+							}else if(hzutaten.get(str).getName().length()<20) {
+								System.out.print("Name: " + hzutaten.get(str).getName() + "\t\t");
+							}else {
+								System.out.print("Name: " + hzutaten.get(str).getName() + "\t");
+							}
 							k++;
 						}
 
 					}
 					System.out.println("");
 					bpruef = false;
-					while(bpruef == false){
-						System.out.println("Schreiben Sie den exakten Namen der Zutat die Sie in Ihrem Cocktail haben moechten.");
+					while (bpruef == false) {
+						System.out.println(
+								"Schreiben Sie den exakten Namen der Zutat die Sie in Ihrem Cocktail haben moechten.");
 						eingabes = s.nextLine();
 						itr = zkeys.iterator();
-						
-						while(itr.hasNext()){
+
+						while (itr.hasNext()) {
 							str = itr.next();
-							if(eingabes.equals(hzutaten.get(str).getName())){
+							if (eingabes.equals(hzutaten.get(str).getName())) {
 								bpruef = true;
 							}
 						}
-						if(bpruef == false){
-							System.out.println("Bitte ueberpruefen Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");	
+						if (bpruef == false) {
+							System.out.println(
+									"Bitte ueberpruefen Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");
 						}
 					}
-					
-					
+
 					list1.add(hzutaten.get(eingabes));
+
 					System.out.println("Geben Sie nun die menge dieser Zutat an. (in cl)");
 					eingabei = s.nextInt() * 10;
 
@@ -105,38 +119,69 @@ public class Programm {
 			} else if (eingabei == 2) {
 				// eingabei = 2;
 				while (eingabei == 2) {
+					
+					
+//					itr = keys.iterator();
+//					int j = 1;
+//					while (itr.hasNext()) {
+//						str = itr.next();
+//						System.out.println(j + ": " + hcocktail.get(str).getName());
+//						j++;
+//					}
+					
 					itr = keys.iterator();
 					int j = 1;
 					while (itr.hasNext()) {
 						str = itr.next();
-						System.out.println(j + ": " + hcocktail.get(str).getName());
-						j++;
+						if (j == 2) {
+							if(hcocktail.get(str).getName().length()<10) {
+								System.out.println("Name: " + hcocktail.get(str).getName() + "\t\t\t");
+							}else if(hcocktail.get(str).getName().length()<20) {
+								System.out.println("Name: " + hcocktail.get(str).getName() + "\t\t");
+							}else {
+								System.out.println("Name: " + hcocktail.get(str).getName() + "\t");
+							}
+							j = 1;
+						} else {
+							if(hcocktail.get(str).getName().length()<10) {
+								System.out.print("Name: " + hcocktail.get(str).getName() + "\t\t\t");
+							}else if(hcocktail.get(str).getName().length()<20) {
+								System.out.print("Name: " + hcocktail.get(str).getName() + "\t\t");
+							}else {
+								System.out.print("Name: " + hcocktail.get(str).getName() + "\t");
+							}
+							j++;
+						}
+
 					}
 					
+
 					bpruef = false;
-					while(bpruef == false){
-						System.out.println("Schreiben Sie den exakten Namen des Cocktails den Sie auswaehlen moechten.");
+					while (bpruef == false) {
+						System.out
+								.println("Schreiben Sie den exakten Namen des Cocktails den Sie auswaehlen moechten.");
 						eingabes = s.nextLine();
 						itr = keys.iterator();
-						
-						while(itr.hasNext()){
+
+						while (itr.hasNext()) {
 							str = itr.next();
-							if(eingabes.equals(hcocktail.get(str).getName())){
+							if (eingabes.equals(hcocktail.get(str).getName())) {
 								bpruef = true;
 							}
 						}
-						if(bpruef == false){
-							System.out.println("Bitte ueberpruefen Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");	
+						if (bpruef == false) {
+							System.out.println(
+									"Bitte ueberpruefen Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");
 						}
 					}
-					
-					
+
 					System.out.println("Name: " + hcocktail.get(eingabes).getName());
 					System.out.println("Zutaten: ");
 					for (int i = 0; i < hcocktail.get(eingabes).zutaten.size(); i++) {
-						System.out.println(hcocktail.get(eingabes).mengen.get(i)  + "cl \t"+ hcocktail.get(eingabes).zutaten.get(i).getName());
+						System.out.println(hcocktail.get(eingabes).mengen.get(i) + "cl \t"
+								+ hcocktail.get(eingabes).zutaten.get(i).getName());
 					}
-					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien()+ " kcal");
+					System.out.println("Kalorien: " + hcocktail.get(eingabes).getKalorien() + " kcal");
 					System.out.println("Alkoholgehalt: " + Math.round(hcocktail.get(eingabes).getAlkgehalt()) + "%");
 					System.out.println("Preis: " + hcocktail.get(eingabes).getPreis() + " Euro");
 
@@ -151,7 +196,8 @@ public class Programm {
 						wert = wert + hcocktail.get(eingabes).getPreis();
 						System.out.println("Viel spass mit ihrem " + hcocktail.get(eingabes).getName() + ".");
 					}
-					if (eingabei == 3) { // variable wird auf 4 gesetzt um mit der ursprÃƒÆ’Ã‚Â¼nglichen while-schleife
+					if (eingabei == 3) { // variable wird auf 4 gesetzt um mit der ursprÃƒÆ’Ã‚Â¼nglichen
+											// while-schleife
 											// das
 											// programm nciht zu beenden
 						eingabei = 4;
@@ -161,12 +207,15 @@ public class Programm {
 			}
 		}
 		// rechnung erstellen und anzeigen, immer wenn bestellt iwrd preis aufsummieren
-		System.out.println("Vielen Dank fuer Ihren Besuch. Die Summe Ihrer Rechnung betraegt: " +  Double.valueOf(Math.round((wert)*100)/100.0) + " Euro"); // wert noch riwie auf 2 kommastellen anzeigen lassen
+		System.out.println("Vielen Dank fuer Ihren Besuch. Die Summe Ihrer Rechnung betraegt: "
+				+ Double.valueOf(Math.round((wert) * 100) / 100.0) + " Euro"); // wert noch riwie auf 2 kommastellen
+																				// anzeigen lassen
 		safe(hzutaten, hcocktail);
 	}
 
 	private static Hashtable<String, Einzelgetraenk> loadzutaten() {
-		// befÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼llen der Hashtable mit den vorhandenen Zutaten aus einer
+		// befÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼llen der Hashtable mit den
+		// vorhandenen Zutaten aus einer
 		// datei
 		// falls keine datei vorhanden wird eine Standartliste geladen
 		Hashtable<String, Einzelgetraenk> hzutaten = null;
@@ -176,7 +225,7 @@ public class Programm {
 			hzutaten = (Hashtable<String, Einzelgetraenk>) in.readObject();
 			in.close();
 		} catch (Exception e) {
-//			System.err.println(e.toString());
+			// System.err.println(e.toString());
 			System.out.println("Es wurde ein initialer Zutatenbestand geladen.");
 		}
 		if (hzutaten == null) {
@@ -189,7 +238,8 @@ public class Programm {
 	}
 
 	private static Hashtable<String, Cocktail> loadcocktail(Hashtable<String, Einzelgetraenk> hzutaten) {
-		// befÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼llen der Hashtable mit den vorhandenen Cocktails aus
+		// befÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼llen der Hashtable mit den
+		// vorhandenen Cocktails aus
 		// einer datei
 		// falls keine Datei vorhanden wird eine Standartliste geladen
 		Hashtable<String, Cocktail> hcocktail = null;
@@ -199,7 +249,7 @@ public class Programm {
 			hcocktail = (Hashtable<String, Cocktail>) in.readObject();
 			in.close();
 		} catch (Exception e) {
-			//System.err.println(e.toString());
+			// System.err.println(e.toString());
 			System.out.println("Es wurde ein initialer Cocktailbestand geladen.");
 		}
 		if (hcocktail == null) {
@@ -212,7 +262,8 @@ public class Programm {
 	}
 
 	private static void safe(Hashtable<String, Einzelgetraenk> hzutaten, Hashtable<String, Cocktail> hcocktail) {
-		// speichern der hashtables fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r zutaten und cocktails in
+		// speichern der hashtables fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r zutaten
+		// und cocktails in
 		// dateien
 		try {
 
@@ -240,7 +291,8 @@ public class Programm {
 	}
 
 	private static void initzutaten(Hashtable<String, Einzelgetraenk> h) {
-		// initiale befÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼llung der zutaten in die Hashtable falls keine
+		// initiale befÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼llung der zutaten in
+		// die Hashtable falls keine
 		// datei
 		// vorhanden war
 
