@@ -126,7 +126,7 @@ public class Programm {
 							}
 						}
 						if(bpruef == false){
-							System.out.println("Bitte überpruefen Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");	
+							System.out.println("Bitte ueberpruefen Sie Ihre Eingabe. Achten Sie auf Gross- und Kleinschreibung.");	
 						}
 					}
 					
