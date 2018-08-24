@@ -6,8 +6,8 @@ import java.util.Vector;
 import java.util.stream.Collectors;
 
 public class Cocktail extends Getraenk {
-	private ArrayList<Einzelgetraenk> zutaten; // zutaten
-	private ArrayList<Double> mengen; // mengen
+	public ArrayList<Einzelgetraenk> zutaten; // zutaten
+	public ArrayList<Double> mengen; // mengen
 	//private String Anleitung;
 
 	// Konstruktor Cocktail
